@@ -1,0 +1,12 @@
+#Custom-photo img{
+    width: 400px;
+    height: 350px;
+    border-radius: 30%;
+}
+
+@media only screen and (max-width: 576px){
+    #Custom-photo img{
+        width: 350px;
+        height: 300px;
+    }
+}

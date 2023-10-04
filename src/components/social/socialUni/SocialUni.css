@@ -1,0 +1,14 @@
+.social,.imagem{
+    width: 100%;
+}
+
+.principal{
+    height: calc(100vh - 80px);
+}
+@media only screen and (max-width: 576px){
+    .principal{
+        flex-direction: column-reverse;
+        height: auto;
+        
+    }
+}
