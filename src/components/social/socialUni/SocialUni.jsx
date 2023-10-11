@@ -1,6 +1,6 @@
 import React from 'react'
 import Nome from '../nome/Nome'
-import RedeSocial from '../redesSocial/RedeSocial'
+import RedeSocialList from '../redesSocial/RedeSocialList'
 import "./SocialUni.css"
 import FotoPrincipal from '../fotoPrincipal/FotoPrincipal'
 const SocialUni = () => {
@@ -8,7 +8,7 @@ const SocialUni = () => {
     <div className='d-flex principal'>
          <div className='social d-flex flex-column justify-content-center align-items-center mt-2'>
             <Nome/>
-            <RedeSocial/>
+            <RedeSocialList/>
         </div>
         <div className='imagem d-flex flex-column justify-content-center align-items-center mt-2'>
             <FotoPrincipal/>

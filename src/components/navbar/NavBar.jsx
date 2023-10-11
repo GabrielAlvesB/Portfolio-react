@@ -7,7 +7,7 @@ import "./NavBar.css";
 const NavBar = () => {
   return (
 
-    <Navbar expand="lg" className="navbarcor">
+    <Navbar expand="lg" className="navbarcor" sticky="top">
       <Container className=' d-flex justify-content-center align-items-center m-2'>
         
         <Navbar.Brand href="#" className='d-flex'>

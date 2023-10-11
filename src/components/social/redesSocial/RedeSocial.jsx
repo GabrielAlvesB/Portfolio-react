@@ -1,23 +1,14 @@
 import React from 'react'
 
-import "./RedeSocial.css"
+import "./RedeSocial1.css"
 
-import {AiFillLinkedin, AiOutlineGithub,AiOutlineInstagram} from "react-icons/ai"
 
-const RedeSocial = () => {
+const RedeSocial = ({indentifier, children}) => {
   return (
-    <div class="social-links">
-		<div id="instagram" class="social-btn flex-center">
-			<AiOutlineInstagram/><span>@gabeel.dev</span>
-		</div>
-		<div id="linkedin" class="social-btn flex-center">
-            <AiFillLinkedin/><span>gabrielalvesbatista</span>
-		</div>
-    
-		<div id="github" class="social-btn flex-center">
-			<AiOutlineGithub/><span>GabrielAlvesB</span>
+
+    <div class="social-btn flex-center rede-social-color">
+		{children} <span>{indentifier}</span>
 	</div>
-</div>
   )
 }
 
