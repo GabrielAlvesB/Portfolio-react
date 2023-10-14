@@ -1,0 +1,91 @@
+.html5, .css, .js, .boot, .tailw, .git, .mysql, .linux, .windows, .terminal, .react, .figma, .inks, .docker, .vscode, .brains, .vite{
+    width: 30px;
+    height: 30px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    color: #fff ;
+    cursor: pointer;
+
+}  
+
+
+.html5:hover {
+    color: #e95934 !important;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.css:hover{
+    color: #1672ad;
+    transition: 0.3s ease-in-out;
+}
+
+.js:hover{
+    color: #db9a45;
+    transition: 0.3s ease-in-out;
+}
+
+.boot:hover{
+    color: #8412fb;
+    transition: 0.3s ease-in-out;
+}
+
+.tailw:hover{
+    color: #07B0CE;
+    transition: 0.3s ease-in-out;
+}
+
+.git:hover{
+    color: #f05033;
+    transition: 0.3s ease-in-out;
+}
+
+.mysql:hover{
+    color: #1787ad;
+    transition: 0.3s ease-in-out;
+}
+
+.linux:hover{
+    color: #1787ad;
+    transition: 0.3s ease-in-out;
+}
+
+.windows:hover{
+    color: #00adef;
+    transition: 0.3s ease-in-out;
+}
+
+.terminal:hover{
+    color: #2bff00;
+    transition: 0.3s ease-in-out;
+}
+
+.react:hover{
+    color: #5ED3F3;
+    transition: 0.3s ease-in-out;
+}
+
+.figma:hover{
+    color: #EA4C1D;
+    transition: 0.3s ease-in-out;
+}
+
+.docker:hover{
+    color: #1C60E6;
+    transition: 0.3s ease-in-out;
+}
+
+.vscode:hover{
+    color: #4CABEC;
+    transition: 0.3s ease-in-out;
+}
+
+.brains:hover{
+    color: #FF2E75;
+    transition: 0.3s ease-in-out;
+}
+
+.vite:hover{
+    color: #BD34FE;
+    transition: 0.3s ease-in-out;
+}

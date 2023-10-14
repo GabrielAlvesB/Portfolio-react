@@ -7,6 +7,7 @@ import SocialUni from './components/social/socialUni/SocialUni';
 import Sobre from './components/titulos/Sobre';
 import SobreCard from './components/sobre/SobreCard';
 import Skill from './components/titulos/Skill';
+import Skills from './components/skills/Skills';
 
 
 
@@ -20,6 +21,7 @@ function App() {
       <Sobre />
       <SobreCard />
       <Skill />
+      <Skills />
     </div>
   )
 }

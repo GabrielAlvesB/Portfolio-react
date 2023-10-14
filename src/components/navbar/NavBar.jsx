@@ -14,8 +14,8 @@ const NavBar = () => {
             <div className='navbar-imagem-nome p-2' >
                 <img src="../../../public/img/logoazul.png" alt="" />
             </div>
-            <div className='p-2'>
-                Gabriel Alves
+            <div className='p-2 navBarTitulo'>
+                <p>Gabriel Alves</p>
             </div>
         </Navbar.Brand>
       </Container>
