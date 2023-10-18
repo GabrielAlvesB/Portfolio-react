@@ -1,3 +1,24 @@
+@media only screen and (max-width: 576px){
+
+    .containerTrajetoria{
+        height: auto !important;
+        flex-direction: column;
+    }
+    /* .trajetoria{
+        display: flex;
+        justify-content: center !important;
+        flex-direction: column !important;
+    } */
+    .mobile-Trajetoria{
+        flex-direction: column;
+        margin-top: 5px;
+    }
+    .empresa, .tempoDeEmpresa, .cagoExercido{
+        margin-top: 10px !important;
+    }
+}
+
+
 .trajetoria{
     /* background-color: red !important; */
     height: auto;

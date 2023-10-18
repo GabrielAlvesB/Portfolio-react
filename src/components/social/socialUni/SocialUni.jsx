@@ -7,7 +7,7 @@ const SocialUni = () => {
   return (
     <div className='d-flex principal'>
          <div className='social d-flex flex-column justify-content-center align-items-center mt-2'>
-            <Nome/>
+            <Nome className="aaaaa"/>
             <RedeSocialList/>
         </div>
         <div className='imagem d-flex flex-column justify-content-center align-items-center mt-2'>
