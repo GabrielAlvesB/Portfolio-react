@@ -2,10 +2,10 @@ import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { AiFillHtml5, AiFillFileMarkdown } from "react-icons/ai";
+import { AiFillHtml5 } from "react-icons/ai";
 import { FaCss3Alt, FaLinux, FaWindows, FaReact, FaDocker } from "react-icons/fa";
 import { BiLogoJavascript, BiLogoBootstrap, BiLogoTailwindCss, BiLogoGit, BiLogoFigma } from "react-icons/bi";
-import { SiMysql, SiWindowsterminal, SiInkscape, SiVisualstudiocode,SiJetbrains, SiVite } from "react-icons/si";
+import { SiMysql, SiWindowsterminal, SiInkscape, SiVisualstudiocode,SiJetbrains, SiVite, SiDatagrip } from "react-icons/si";
 
 import "./Skills.css"
 
@@ -32,6 +32,7 @@ const Skills = () => {
         <Col > <SiVisualstudiocode className='vscode'/> </Col>
         <Col > <SiJetbrains className='brains'/> </Col>
         <Col > <SiVite className='vite'/> </Col>
+        <Col > <SiDatagrip className='datagrip'/> </Col>
       </Row>
     </Container>
   )

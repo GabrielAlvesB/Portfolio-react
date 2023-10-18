@@ -3,7 +3,7 @@ import "./SobreCard.css"
 import Card from './Card'
 const SobreCard = () => {
   return (
-    <div className='d-flex justify-content-center align-items-center'>
+    <div className='d-flex justify-content-center align-items-center sobrecard'>
 
       
     <div className="p-1">

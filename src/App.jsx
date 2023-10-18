@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 
@@ -8,12 +7,15 @@ import Sobre from './components/titulos/Sobre';
 import SobreCard from './components/sobre/SobreCard';
 import Skill from './components/titulos/Skill';
 import Skills from './components/skills/Skills';
+import Projetos from './components/titulos/Projetos';
+import ProjetoCard from './components/projetos/ProjetoCard';
+import Trajetoria from './components/trajetoria/Trajetoria';
+import Empregos from './components/titulos/Empregos';
+
 
 
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className='container'>
       <NavBar/>
@@ -22,8 +24,13 @@ function App() {
       <SobreCard />
       <Skill />
       <Skills />
+      <Projetos />
+      <ProjetoCard />
+      <Empregos />
+      <Trajetoria />
+      <Projetos />
+
     </div>
   )
 }
-
 export default App

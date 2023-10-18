@@ -1,4 +1,4 @@
-.html5, .css, .js, .boot, .tailw, .git, .mysql, .linux, .windows, .terminal, .react, .figma, .inks, .docker, .vscode, .brains, .vite{
+.html5, .css, .js, .boot, .tailw, .git, .mysql, .linux, .windows, .terminal, .react, .figma, .inks, .docker, .vscode, .brains, .vite, .datagrip{
     width: 30px;
     height: 30px;
     margin-top: 2px;
@@ -87,5 +87,10 @@
 
 .vite:hover{
     color: #BD34FE;
+    transition: 0.3s ease-in-out;
+}
+
+.datagrip:hover{
+    color: #2BC584;
     transition: 0.3s ease-in-out;
 }

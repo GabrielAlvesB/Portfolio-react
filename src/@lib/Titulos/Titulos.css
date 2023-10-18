@@ -12,8 +12,8 @@
   /* button styling */
   .button {
     --border-right: .375rem;
-    --text-stroke-color: rgba(255,255,255,0.6);
-    --animation-color: #37FF8B;
+    --text-stroke-color: rgba(0, 136, 255, 0.6);
+    --animation-color: #8b00ff;
     --fs-size: 2em;
     letter-spacing: .1875rem;
     text-decoration: none;
