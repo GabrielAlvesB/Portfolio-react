@@ -11,6 +11,8 @@ import Projetos from './components/titulos/Projetos';
 import ProjetoCard from './components/projetos/ProjetoCard';
 import Trajetoria from './components/trajetoria/Trajetoria';
 import Empregos from './components/titulos/Empregos';
+import Contract from './components/titulos/Contract';
+import Contato from './components/contato/Contato';
 
 
 
@@ -28,7 +30,9 @@ function App() {
       <ProjetoCard />
       <Empregos />
       <Trajetoria />
-      <Projetos />
+      <Contract />
+      <Contato />
+
 
     </div>
   )

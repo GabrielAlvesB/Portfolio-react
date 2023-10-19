@@ -4,11 +4,6 @@
         height: auto !important;
         flex-direction: column;
     }
-    /* .trajetoria{
-        display: flex;
-        justify-content: center !important;
-        flex-direction: column !important;
-    } */
     .mobile-Trajetoria{
         flex-direction: column;
         margin-top: 5px;
@@ -28,6 +23,8 @@
     height: 65px;
     padding: 1px;
 }
+
+
 .logoTrajetoria{
     border: solid 2px #48bfe3;
     width: 90px;
@@ -60,4 +57,8 @@
     height: 50px;
     width: 50px;
     color: #48bfe3;
+}
+
+.arrowIcon:hover{
+    transform: scale(1.2,1.2);
 }
