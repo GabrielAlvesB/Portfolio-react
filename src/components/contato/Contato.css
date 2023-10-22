@@ -1,3 +1,9 @@
+@media only screen and (max-width: 576px){
+    .imagemContato{
+        display: none !important;
+    }
+}
+
 .containerContato{
     /* background-color: red; */
     width: 100%;
@@ -40,10 +46,6 @@
 input::placeholder, textarea::placeholder{
     color: #fff;
 }
-.aaaa{
-    color: #fff;
-    border-bottom: none !important;
-}
 .inputFormulario input, textarea{
     margin-top: 20px;
     margin-left: 20px;
@@ -59,5 +61,5 @@ input::placeholder, textarea::placeholder{
 
 
 textarea{
-    height: 110px;
+    height: 100px;
 }

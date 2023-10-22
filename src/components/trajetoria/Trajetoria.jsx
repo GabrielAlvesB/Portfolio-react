@@ -14,9 +14,11 @@ const Trajetoria = () => {
             <div className="cagoExercido">Cargo: Programador de Sistema da Informação</div>
         </div>
       </div>
+
       <div className="arrow d-flex justify-content-center align-items-center"> 
         <BsFillArrowDownCircleFill className="arrowIcon"/>
       </div>
+        
       <div className="containerTrajetoria d-flex justify-content-evenly align-items-center">
         <div className="logoTrajetoria d-flex justify-content-center align-items-center ">
           <img src="../../../public/sobre-mim/íconeEmprego.png" alt="" />

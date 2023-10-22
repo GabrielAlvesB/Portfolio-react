@@ -13,13 +13,15 @@ import Trajetoria from './components/trajetoria/Trajetoria';
 import Empregos from './components/titulos/Empregos';
 import Contract from './components/titulos/Contract';
 import Contato from './components/contato/Contato';
+import Footer from './components/footer/Footer';
 
 
 
 
 function App() {
   return (
-    <div className='container'>
+    <div >
+      <div className='container'> 
       <NavBar/>
       <SocialUni/>
       <Sobre />
@@ -32,6 +34,8 @@ function App() {
       <Trajetoria />
       <Contract />
       <Contato />
+      </div>
+      <Footer />
 
 
     </div>

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import "./Contato.css"
 import emailjs from '@emailjs/browser'
+import Button from '../../@lib/button/Button'
 
 const Contato = () => {
 
@@ -42,7 +43,7 @@ const Contato = () => {
 
     return (
         <div className='containerContato d-flex'>
-            <div className="imagemContato d-flex justify-content-center">
+            <div className="imagemContato d-flex justify-content-center hiden">
                 <img src="../../../public/img/avatar/Programador.png" alt="" />
             </div>
             <div className="formularioContato d-flex justify-content-center  align-items-center">
@@ -53,8 +54,9 @@ const Contato = () => {
                         <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
                         <input type="text" value={assunto} onChange={(e) => setAssunto(e.target.value)} placeholder="Assunto" />
                         <textarea value={mensagem} onChange={(e) => setMensagem(e.target.value)} placeholder="Digite aqui sua mensagem"></textarea>
-
-                        <input type="submit" className='aaaa' />
+                        <div className='d-flex justify-content-center  align-items-center m-4'>
+                            <Button size={"medium"} type='submit' name="Enviar"/>
+                        </div>
                     </form>
                 </div>
             </div>
