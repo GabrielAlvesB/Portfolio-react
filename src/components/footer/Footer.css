@@ -1,98 +1,10 @@
-.footerLogo1{
-    /* background-color: red; */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: none;
-    
-}
-.footerInfo{
-    /* background-color: gold; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* border: solid 5px green; */
-    background-color: #171C22;
-    border-radius: 50px;
-    width: 30%;
-    padding: 7px;
-}
-.footerLogo1, .footerInfo{
-    margin: 10px 0px 10px 0px;
-
-}
-.footer{
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    flex: 1;
-    justify-content: space-around;
-    margin: 10px 0px 0px 0px;
-}
 .rodape{
-    color: #fff;
     background-color: black;
-
-}
-
-.direitosReservados p{
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.direitosReservados a{
-    text-decoration: none;
-    color: #48bfe3;
-    margin-left: 2px;
-}
-@media only screen and (max-width: 576px){
-    .footerInfo{
-
-        width: 70% !important;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-/* .numero1, .number2{
-    color: #fff;
-    width: 100%;
-    height: auto;
-    margin: 20px;
-}
-.numero1{
-    background-color: red;
-}
-.numero2{
-   
-    width: 80%;
-}
-
-.footer{
     margin-top: 10px;
-    width: 100%;
-    
+    height: auto;
 }
-.direitosReservados p{
-    text-align: center;
+.rodape p{
     margin: 0;
+    color: #fff;
+    font-size: 14px;
 }
-@media only screen and (max-width: 576px){
-
-    .footerMobile{
-        flex-direction: column;
-    }
-    .numero2, .numero1{
-        width: none !important;
-    }
-   
-} */

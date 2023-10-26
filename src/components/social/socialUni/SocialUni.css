@@ -2,6 +2,9 @@
     width: 100%;
 }
 
+.social a{
+    text-decoration: none;
+}
 .principal{
     height: calc(100vh - 80px);
 }
