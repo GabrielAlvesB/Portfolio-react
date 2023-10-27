@@ -4,8 +4,33 @@ import App from './App.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css'
 
+import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom'
+import ErrorPage from './routes/ErrorPage.jsx';
+import Home from './routes/Home.jsx';
+import Galeria from './routes/Galeria.jsx';
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <Home />
+      },
+      {
+        path: "galeria",
+        element: <Galeria />
+      }
+    ]
+  }
+])
+
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>,
 )

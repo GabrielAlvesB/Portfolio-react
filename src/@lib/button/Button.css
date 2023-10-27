@@ -6,8 +6,8 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    border: 1px solid #17795E;
-    background-color: #209978;
+    border: 1px solid #0e76a8;
+    background-color: #0e76a8;
     overflow: hidden;
   }
   
@@ -26,7 +26,7 @@
     transform: translateX(129px);
     height: 100%;
     width: 39px;
-    background-color: #17795E;
+    background-color: #0e76a8;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,7 +38,7 @@
   }
   
   .buttonDownload:hover {
-    background: #17795E;
+    background: #0e76a8;
   }
   
   .buttonDownload:hover .button__text {
@@ -51,11 +51,11 @@
   }
   
   .buttonDownload:active .button__icon {
-    background-color: #146c54;
+    background-color: #0e76a8;
   }
   
   .buttonDownload:active {
-    border: 1px solid #146c54;
+    border: 1px solid #0e76a8;
   }
 /* botão de download final*/
 

@@ -3,12 +3,16 @@ import Nome from '../nome/Nome'
 import RedeSocialList from '../redesSocial/RedeSocialList'
 import "./SocialUni.css"
 import FotoPrincipal from '../fotoPrincipal/FotoPrincipal'
+import Button from '../../../@lib/button/Button'
 const SocialUni = () => {
   return (
     <div className='d-flex principal'>
          <div className='social d-flex flex-column justify-content-center align-items-center mt-2'>
-            <Nome className="aaaaa"/>
+            <Nome name="Gabriel Alves"/>
             <RedeSocialList/>
+            <a href="../../../../public/curriculo/Curriculo.jpg" download>
+            <Button pattern="download"/>
+            </a>
         </div>
         <div className='imagem d-flex flex-column justify-content-center align-items-center mt-2'>
             <FotoPrincipal/>
