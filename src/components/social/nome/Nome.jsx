@@ -1,9 +1,12 @@
 import React from 'react'
 import "./Nome.css"
-const Nome = () => {
+const Nome = ({name}) => {
+
+  const nome = name
+
   return (
     <div className="loader ">
-        <div data-glitch="Gabriel Alves" class="glitch">Gabriel Alves</div>
+        <div data-glitch={nome} class="glitch">{nome}</div>
     </div>
   )
 }
