@@ -1,7 +1,7 @@
 import { useRouteError, useLocation } from "react-router-dom"
 import "./ErrorPage.css"
 import ErrorPagina from "../components/animacao/errorpagina/ErrorPagina"
-import Nome from '../components/social/nome/Nome';
+import Glitch from "../components/animacao/glitch/Glitch";
 
 const ErrorPage = () => {
 
@@ -14,7 +14,7 @@ const ErrorPage = () => {
   return (
     <div className="errorPage d-flex flex-column justify-content-center align-items-center">
         <div className="codigError">
-          <Nome name="Error 404" />
+          <Glitch name="Error 404" />
         </div>
         <div className="imagemError">
           <ErrorPagina />
