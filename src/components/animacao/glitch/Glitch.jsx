@@ -3,7 +3,7 @@ const Glitch = ({name}) => {
     const nome = name
     return (
         <div className="loader ">
-            <div data-glitch={nome} class="glitch">{nome}</div>
+            <div data-glitch={nome} className="glitch">{nome}</div>
         </div>
     )
 }

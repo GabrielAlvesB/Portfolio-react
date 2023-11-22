@@ -58,9 +58,11 @@ input::placeholder, textarea::placeholder{
     color: #fff;
     padding: 5px;
 }
-
+.errorMensagemcss{
+    background-color: red !important;
+}
 
 textarea{
-    max-height: 100px;
-    min-height: 50px;
+    max-height: 110px;
+    min-height: 110px;
 }

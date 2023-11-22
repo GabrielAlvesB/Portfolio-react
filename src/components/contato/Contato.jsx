@@ -3,6 +3,10 @@ import "./Contato.css"
 import emailjs from '@emailjs/browser'
 import Button from '../../@lib/button/Button'
 
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
+
 const Contato = () => {
 
 
@@ -10,12 +14,18 @@ const Contato = () => {
     const [email, setEmail] = useState('')
     const [assunto, setAssunto] = useState('')
     const [mensagem, setMensagem] = useState('')
-    
+
 
     function sendEmail(e) {
+        const confirmacaoEmail = () => toast.success("E-mail enviado!");
+        const campoemail = () => toast.warning("Campo Vazio!");
+        const errorEmail = () => toast.error("Tente Novamente!");
+
+
         e.preventDefault();
         if (name === '' || email === '' || assunto === '' || mensagem === '') {
             console.log("Campos obrigatórios não preenchidos");
+            campoemail();
             return;
         }
 
@@ -26,7 +36,7 @@ const Contato = () => {
             email: email
         };
 
-      
+
         emailjs.send("service_tlijiih", "template_23e7hp5", templateParams, "8HjXOJpGm4YY4H1En")
             .then((response) => {
                 console.log("Email enviado", response.status, response.text);
@@ -35,9 +45,11 @@ const Contato = () => {
                 setEmail('');
                 setAssunto('');
                 setMensagem('');
+                confirmacaoEmail();
             })
             .catch((err) => {
                 console.error("Erro ao enviar o email:", err);
+                errorEmail();
             });
     }
 
@@ -55,7 +67,17 @@ const Contato = () => {
                         <input type="text" value={assunto} onChange={(e) => setAssunto(e.target.value)} placeholder="Assunto" />
                         <textarea value={mensagem} onChange={(e) => setMensagem(e.target.value)} placeholder="Digite aqui sua mensagem"></textarea>
                         <div className='d-flex justify-content-center  align-items-center m-4'>
-                            <Button size={"medium"} type='submit' name="Enviar"/>
+                            <Button size={"medium"} type='submit' name="Enviar" />
+                            <ToastContainer position="top-right"
+                                autoClose={3000}
+                                hideProgressBar={false}
+                                newestOnTop={false}
+                                closeOnClick
+                                rtl={false}
+                                pauseOnFocusLoss
+                                draggable
+                                pauseOnHover
+                                theme="dark" />
                         </div>
                     </form>
                 </div>

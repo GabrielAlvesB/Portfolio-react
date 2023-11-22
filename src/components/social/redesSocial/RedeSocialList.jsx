@@ -8,14 +8,14 @@ import RedeSocial from './RedeSocial'
 
 const listSocial = [
 	{id:1, children: <AiOutlineInstagram/>, indentifier: "gabeel.dev"},
-	{id:2, children: <AiFillLinkedin/>, indentifier: "in/gabrielalvesbatista"},
+	{id:2, children: <AiFillLinkedin/>, indentifier: "gabrielalvesbatista"},
 	{id:3, children: <AiOutlineGithub/>, indentifier: "GabrielAlvesB"},
 ]
 
 
 const RedeSocialList = () => {
   return (
-    <div class="social-links">
+    <div className="social-links">
 		{listSocial.map(social => {
 			return(
 				<RedeSocial key={social.id} indentifier={social.indentifier} children={social.children}/>
