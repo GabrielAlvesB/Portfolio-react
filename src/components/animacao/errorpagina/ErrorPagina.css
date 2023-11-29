@@ -20,11 +20,11 @@
   
   @keyframes sunrise {
     0%, 10%, 90%, 100% {
-      box-shadow: 0 0 0 25px #5ad6bd, 0 0 0 40px #4acead, 0 0 0 60px rgba(74, 206, 173, 0.6), 0 0 0 90px rgba(74, 206, 173, 0.3);
+      box-shadow: 0 0 0 25px #03a9f4, 0 0 0 40px #03a9f4, 0 0 0 60px #03a8f486, 0 0 0 90px #03a8f486;
     }
   
     25%, 75% {
-      box-shadow: 0 0 0 0 #5ad6bd, 0 0 0 0 #4acead, 0 0 0 0 rgba(74, 206, 173, 0.6), 0 0 0 0 rgba(74, 206, 173, 0.3);
+      box-shadow: 0 0 0 0 #03a9f4, 0 0 0 0 #03a9f4, 0 0 0 0 #03a8f4b0, 0 0 0 0 #03a8f4b0;
     }
   }
   
@@ -318,7 +318,7 @@
     border-left: 4px solid #4D4454;
     border-top-right-radius: 6px;
     transform: skew(30deg);
-    box-shadow: inset -3px 3px 0px 0px #F7B563;
+    box-shadow: inset -3px 3px 0px 0px #f441a5;
     /*background: linear-gradient(
       to bottom, 
       rgba(246,212,132,1) 0%,
@@ -328,7 +328,7 @@
       rgba(235,151,53,1) 75%,
       rgba(235,151,53,1) 100%
     );*/
-    background: #f6d484;
+    background: #f441a5;
   }
   
   .roof:before {
@@ -340,7 +340,7 @@
     left: 15%;
     z-index: 0;
     border-radius: 10%;
-    background-color: #E78C20;
+    background-color: #f441a5;
   }
   
   .roof:after {
@@ -351,7 +351,7 @@
     bottom: 0;
     right: 0;
     z-index: 1;
-    background: linear-gradient(to bottom, rgba(231, 140, 32, 0.4) 0%, rgba(231, 140, 32, 0.4) 64%, rgba(231, 140, 32, 0.8) 65%, rgba(231, 140, 32, 0.8) 100%);
+    background: linear-gradient(to bottom, #f441a5 0%, #f441a5 64%, #f441a5 65%, #f441a5 100%);
   }
   
   .roof-border-left {

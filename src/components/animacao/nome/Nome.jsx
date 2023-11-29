@@ -1,12 +1,18 @@
 import React from 'react'
 import "./Nome.css"
-const Nome = ({ name }) => {
 
-  const nome = name
+import Typewriter from 'typewriter-effect';
+const Nome = () => {
 
   return (
-    <div className="nameClasse">
-      <span className="NameText">{nome}</span>
+    <div className="name">
+      <Typewriter
+        options={{
+          strings: ['Gabriel Alves Batista', 'Desenvolvedor Front End', 'Web Design' , 'Ui/UX'],
+          autoStart: true,
+          loop: true,
+        }}
+      />
     </div>
   )
 }

@@ -9,7 +9,8 @@ const SocialUni = () => {
   return (
     <div className='d-flex principal'>
          <div className='social d-flex flex-column justify-content-center align-items-center mt-2'>
-            <Nome name="Gabriel⠀Alves"/>
+            <Nome/>
+
             {/* <Especialidade /> */}
             <RedeSocialList/>
             <a href="../../../../public/curriculo/Curriculo.jpg" download>
