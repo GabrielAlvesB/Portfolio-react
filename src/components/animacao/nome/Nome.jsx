@@ -8,7 +8,7 @@ const Nome = () => {
     <div className="name">
       <Typewriter
         options={{
-          strings: ['Gabriel Alves Batista', 'Desenvolvedor Front End', 'Web Design' , 'Ui/UX'],
+          strings: ['Desenvolvedor', 'Front End', 'Web Design' , 'Ui/UX'],
           autoStart: true,
           loop: true,
         }}

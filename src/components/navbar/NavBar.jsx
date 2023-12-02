@@ -8,14 +8,14 @@ const NavBar = () => {
   return (
 
     <Navbar expand="lg" className="navbarcor" sticky="top">
-      <Container className=' d-flex justify-content-center align-items-center m-2'>
+      <Container className=' d-flex justify-content-center align-items-center '>
         
-        <Navbar.Brand href="#" className='d-flex'>
-            <div className='navbar-imagem-nome p-2' >
+        <Navbar.Brand href="#" className='d-flex '>
+            <div className='navbar-imagem-nome d-flex align-items-center' >
                 <img src="../../../public/img/logoazul.png" alt="" />
             </div>
-            <div className='p-2 navBarTitulo'>
-                <p>Gabriel Alves</p>
+            <div className='navBarTitulo d-flex align-items-center'>
+                Gabriel Alves
             </div>
         </Navbar.Brand>
       </Container>

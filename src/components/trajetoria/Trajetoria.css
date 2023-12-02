@@ -10,6 +10,7 @@
     }
     .empresa, .tempoDeEmpresa, .cagoExercido{
         margin-top: 10px !important;
+        padding: 6px !important;
     }
 }
 

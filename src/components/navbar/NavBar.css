@@ -1,10 +1,36 @@
+@media only screen and (max-width: 576px){
+  .navbar-imagem-nome img{
+    height: 25px !important;
+  }
+  .navBarTitulo{
+    font-size: 20px !important;
+  }
+
+}
+
+
 .navbar-imagem-nome img{
-    width: 50px;
-    height: 25px;
+    width: auto;
+    height: 35px;  
+}
+
+.navbar-imagem-nome{
+  max-height: 150px;
+
 }
 .navbarcor{
   background-color: #101728;
+  max-height: 200px;
+
 }
-.navBarTitulo p{
+.navBarTitulo{
+  max-height: 150px;
+  font-size: 30px;
   color: #4BBFE4;
+
+}
+
+
+.navbar-imagem-nome, .navBarTitulo{
+  margin-left: 5px;
 }
