@@ -1,6 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
-
+import Oculos from '../../../public/img/iconePrincipal/logoazul.png'
 import "./NavBar.css";
 
 
@@ -12,7 +12,7 @@ const NavBar = () => {
         
         <Navbar.Brand href="#" className='d-flex '>
             <div className='navbar-imagem-nome d-flex align-items-center' >
-                <img src="../../../public/img/logoazul.png" alt="" />
+                <img src={Oculos} alt="" />
             </div>
             <div className='navBarTitulo d-flex align-items-center'>
                 Gabriel Alves
