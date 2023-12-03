@@ -2,7 +2,7 @@ import { useState } from 'react'
 import "./Contato.css"
 import emailjs from '@emailjs/browser'
 import Button from '../../@lib/button/Button'
-
+import AvatarProgramador from '../../../public/img/avatar/Programador.png'
 import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -56,7 +56,7 @@ const Contato = () => {
     return (
         <div className='containerContato d-flex'>
             <div className="imagemContato d-flex justify-content-center hiden">
-                <img src="../../../public/img/avatar/Programador.png" alt="" />
+                <img src={AvatarProgramador} alt="" />
             </div>
             <div className="formularioContato d-flex justify-content-center  align-items-center">
                 <div className="contrateme">Contatos</div>

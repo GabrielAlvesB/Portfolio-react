@@ -1,12 +1,13 @@
 import {BsFillArrowDownCircleFill} from "react-icons/bs";
 import "./Trajetoria.css";
+import IconeTrabalho from '../../../public/sobre-mim/íconeEmprego.png'
 
 const Trajetoria = () => {
   return (
     <div className="trajetoria">
       <div className="containerTrajetoria d-flex justify-content-evenly align-items-center">
         <div className="logoTrajetoria d-flex justify-content-center align-items-center ">
-          <img src="../../../public/sobre-mim/íconeEmprego.png" alt="" />
+          <img src={IconeTrabalho} alt="" />
         </div>
         <div className="mobile-Trajetoria d-flex justify-content-center align-items-center ">
             <div className="empresa">Instituto Ensinar Brasil (Doctum)</div>
@@ -21,7 +22,7 @@ const Trajetoria = () => {
         
       <div className="containerTrajetoria d-flex justify-content-evenly align-items-center">
         <div className="logoTrajetoria d-flex justify-content-center align-items-center ">
-          <img src="../../../public/sobre-mim/íconeEmprego.png" alt="" />
+          <img src={IconeTrabalho} alt="" />
         </div>
         <div className=" mobile-Trajetoria d-flex justify-content-center align-items-center ">
             <div className="empresa">freelancer: Desenvolvimento Web</div>

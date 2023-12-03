@@ -9,10 +9,12 @@ import {BiLogoJavascript, BiLogoBootstrap} from "react-icons/bi"
 
 const ProjetoCard = () => {
   return (
-   <div className='d-flex'>
+   <div className='d-flex construindo'>
+    {/* <Projeto/>
     <Projeto/>
-    <Projeto/>
-    <Projeto/>
+    <Projeto/> */}
+
+    Em construção
 
    </div>
   )
