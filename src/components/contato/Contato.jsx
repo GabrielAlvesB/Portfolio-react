@@ -15,18 +15,37 @@ const Contato = () => {
     const [assunto, setAssunto] = useState('')
     const [mensagem, setMensagem] = useState('')
 
+    function validateForm(name, email, assunto, mensagem){
+
+        if (name === '' || email === '' || assunto === '' || mensagem === '') {
+            // console.log("Campos obrigatórios não preenchidos");
+
+            return { validate:false, error:"campoVazio"};
+        }
+
+        const emailRegex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i;
+
+        if (!emailRegex.test(email)) {
+            return { validate:false, error:"emailInvalido" };
+        }
+
+        return {validate: true, error:null};
+    }
+
 
     function sendEmail(e) {
         const confirmacaoEmail = () => toast.success("E-mail enviado!");
-        const campoemail = () => toast.warning("Campo Vazio!");
+        const campoEmailVazio = () => toast.warning("Campo Vazio!");
+        const campoEmailErrado = () => toast.error("E-mail incorreto!");
         const errorEmail = () => toast.error("Tente Novamente!");
 
 
         e.preventDefault();
-        if (name === '' || email === '' || assunto === '' || mensagem === '') {
-            console.log("Campos obrigatórios não preenchidos");
-            campoemail();
-            return;
+
+        const validateFields = validateForm(name, email, assunto, mensagem)
+        if (!validateFields.validate) {
+            validateFields.error === "campoVazio" ? campoEmailVazio() : campoEmailErrado();
+            return
         }
 
         const templateParams = {
@@ -58,6 +77,8 @@ const Contato = () => {
             <div className="imagemContato d-flex justify-content-center hiden">
                 <img src={AvatarProgramador} alt="" />
             </div>
+
+
             <div className="formularioContato d-flex justify-content-center  align-items-center">
                 <div className="contrateme">Contatos</div>
                 <div className="formularioInputContato">

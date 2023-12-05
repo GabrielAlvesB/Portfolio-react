@@ -3,6 +3,11 @@
         display: none !important;
     }
 }
+@media (min-width: 577px) and (max-width: 800px) {
+    .containerContato{
+        background-color: red;
+    }
+  }
 
 .containerContato{
     /* background-color: red; */
@@ -66,3 +71,4 @@ textarea{
     max-height: 110px;
     min-height: 110px;
 }
+
