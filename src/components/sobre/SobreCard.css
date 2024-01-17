@@ -3,3 +3,9 @@
         flex-direction: column;
     }
 }
+@media (min-width: 577px) and (max-width: 800px) {
+    .sobrecard{
+        flex-wrap: wrap;
+    }
+}
+    

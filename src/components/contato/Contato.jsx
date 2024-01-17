@@ -23,9 +23,12 @@ const Contato = () => {
             return { validate:false, error:"campoVazio"};
         }
 
-        const emailRegex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (!emailRegex.test(email)) {
+            console.log(email)
+            console.log(email)
+
             return { validate:false, error:"emailInvalido" };
         }
 

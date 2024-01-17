@@ -3,14 +3,15 @@
         display: none !important;
     }
 }
+
 @media (min-width: 577px) and (max-width: 800px) {
-    .containerContato{
-        background-color: red;
-    }
-  }
+   .imagemContato{
+    display: none!important;
+ 
+   }
+}
 
 .containerContato{
-    /* background-color: red; */
     width: 100%;
     height: 450px;
 }
@@ -20,12 +21,10 @@
     height: 100%;
 }
 .imagemContato img{
-    /* background-color: gold; */
     height: 100%;
 }
 
 .formularioContato{
-    /* background-color: green; */
     border-radius: 5%;
     border: solid 5px #48bfe3;
 }
@@ -35,7 +34,6 @@
 }
 
 .contrateme{
-    /* background-color: blue; */
     width: 95%;
     height: 40px;
     text-align: center;
@@ -44,7 +42,6 @@
 }
 
 .formularioInputContato{
-    /* background-color: pink; */
     width: 95%;
     height: 350px;
 }
