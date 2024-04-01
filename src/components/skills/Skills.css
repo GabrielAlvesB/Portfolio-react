@@ -1,0 +1,29 @@
+.Skill{
+    min-width: 100px;
+    margin-top: 0.5rem; /* Espaçamento vertical */
+    margin-bottom: 0.5rem; /* Espaçamento vertical */
+    margin-right: 2rem; /* Espaçamento horizontal em telas médias e maiores */
+    display: flex; /* Outras propriedades flexbox podem ser adicionadas aqui */
+    flex-direction: column; /* Direção da flexão em telas médias e maiores */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+}
+.imagemskill{
+    display: block;
+    width: 30px;
+    height: 30px;
+    max-width: 40px; /* Largura máxima em telas grandes */
+    max-height: 40px; /* Altura máxima em telas grandes */
+    object-fit: contain; /* Ajusta o conteúdo para caber no elemento */
+    transition-property: all; /* Propriedades afetadas pela transição */
+    transition-duration: 200ms; /* Duração da transição */
+    transform: scale(1.25); /* Aumenta a escala em 25% */
+}
+.nomeSkil{
+    letter-spacing: 0.1em; /* Espaçamento entre letras mais amplo */
+    font-weight: 600; /* Peso da fonte semi-negrito */
+    font-size: 0.625rem; /* Tamanho da fonte personalizado */
+    font-size: 0.75rem; /* Tamanho da fonte em telas médias e maiores */
+    margin-top: 10px;
+    color: white;
+}

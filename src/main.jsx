@@ -23,7 +23,20 @@ const router = createBrowserRouter([
       {
         path: "galeria",
         element: <Galeria />
-      }
+      },
+      // {
+      //   path: "mediCenter",
+      //   element: <mediCenter />
+      // },
+      // {
+      //   path: "multistepForm",
+      //   element: <multistepForm />
+      // },
+      // {
+      //   path: "lojaZap",
+      //   element: <lojaZap />
+      // },
+      
     ]
   }
 ])

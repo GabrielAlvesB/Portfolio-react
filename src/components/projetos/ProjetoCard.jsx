@@ -1,22 +1,32 @@
 import React from 'react'
-import Projeto from './Projeto'
-import "./ProjetoCard.css"
+import './ProjetoCard.css'
+import Button from '../../@lib/button/Button'
 
-import { AiFillHtml5 } from "react-icons/ai";
-import {FaCss3Alt, FaReact} from "react-icons/fa"
-import {SiVisualstudiocode, SiJetbrains} from "react-icons/si"
-import {BiLogoJavascript, BiLogoBootstrap} from "react-icons/bi"
-
-const ProjetoCard = () => {
+const ProjetoCard = ({ name, img, link, logo, icones }) => {
   return (
-   <div className='d-flex construindo'>
-    {/* <Projeto/>
-    <Projeto/>
-    <Projeto/> */}
+    <div class="post-card mt-2 ">
+      <div className='d-flex justify-content-center'>
 
-    Em construção
+        <img src={logo} alt="" className="avatar" />
 
-   </div>
+      </div>
+      <div className='d-flex justify-content-center mt-2'>
+        <p href="#" class="titleProjetos">{name}</p>
+      </div>
+      <div className='mt-2'>
+        <img src={img} alt="#" className="image-preview" />
+      </div>
+      <div className='d-flex  justify-content-around mt-4'>
+        {icones.map((icone) => (
+          <img key={icone.id} src={icone.nome} alt="" className='iconesProjeto' />
+        ))}
+      </div>
+      <div className='d-flex justify-content-center mt-4 mb-2'>
+        <a href={link} target="_blank">
+          <Button size={"medium"} name={`Saiba +`} />
+        </a>
+      </div>
+    </div>
   )
 }
 

@@ -1,26 +1,18 @@
 import React from 'react'
-import "./Projeto.css"
-import Medcenter from "../../../public/projetos/MediCenter/01-principal-medi.png"
-// import { AiFillHtml5 } from "react-icons/ai";
+import ProjetoCard from './ProjetoCard'
+import { ProjetosList } from '../../data/ProjetosList'
 
 const Projeto = () => {
   return (
-    <div className='ProjetoCard d-flex justify-content-center'>
-        <div className="cardProjeto d-flex justify-content-center">
-            <div className="CardFinal ">
-                <div className="imagemCard">
-                    
-                </div>
-                <div className="textoCard">
+    <div class="container d-flex  justify-content-around mb-4 mt-2 ">
+      <div class="row">
+        {ProjetosList.map(({ id, name, img, link, logo, icones }) => (
+          <div class="col" key={id}>
+            <ProjetoCard name={name} img={img} link={link} logo={logo} icones={icones} />
+          </div>
+        ))}
 
-                </div>
-                <div className="botoesCard"> 
-                
-                </div>
-
-    
-            </div>
-        </div>
+      </div>
     </div>
   )
 }
