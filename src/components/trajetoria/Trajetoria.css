@@ -1,65 +1,38 @@
-@media only screen and (max-width: 576px){
-
-    .containerTrajetoria{
-        height: auto !important;
-        flex-direction: column;
-    }
-    .mobile-Trajetoria{
-        flex-direction: column;
-        margin-top: 5px;
-    }
-    .empresa, .tempoDeEmpresa, .cagoExercido{
-        margin-top: 10px !important;
-        padding: 6px !important;
-    }
-}
-
-
-.trajetoria{
-    /* background-color: red !important; */
-    height: auto;
-}
-.logoTrajetoria img{
-    width: auto;
-    height: 65px;
-    padding: 1px;
-}
-
-
-.logoTrajetoria{
-    border: solid 2px #48bfe3;
-    width: 90px;
-    height: 90px;
-    border-radius: 90%;
- 
-}
-.containerTrajetoria{
-    /* background-color: gold; */
-    height: 110px;
-    padding: 5px;
-    border: solid 2px #48bfe3;
-    margin: 0;
-    border-radius: 50px;
-}
-.empresa, .tempoDeEmpresa, .cagoExercido{
-    font-size: 20px;
+.card {
+    width: 290px;
+    height: 254px;
+    background-image: linear-gradient(144deg,#8608b4, #492fed 60%,#bd6fda);
+    border: none;
+    border-radius: 10px;
+    padding-top: 10px;
+    position: relative;
+    margin: auto;
+    font-family: inherit;
+  }
+  
+  .card span {
+    font-weight: 600;
+    color: white;
     text-align: center;
-    margin: 0;
-    padding: 0;
-    color: #fff;
-}
-
-.arrow{
-    /* background-color: green; */
-    height: 100px;
-}
-
-.arrowIcon{
-    height: 50px;
-    width: 50px;
-    color: #48bfe3;
-}
-
-.arrowIcon:hover{
-    transform: scale(1.2,1.2);
-}
+    display: block;
+    padding-top: 10px;
+    font-size: 1.3em;
+  }
+  
+  .card .job {
+    font-weight: 400;
+    color: white;
+    display: block;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 1em;
+  }
+  
+  .card .img {
+    width: 70px;
+    height: 70px;
+    background: #e8e8e8;
+    border-radius: 100%;
+    margin: auto;
+    margin-top: 20px;
+  }
