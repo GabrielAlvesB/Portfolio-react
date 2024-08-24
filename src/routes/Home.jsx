@@ -1,32 +1,38 @@
 import React from 'react'
 import SocialUni from '../components/social/socialUni/SocialUni';
-import Sobre from '../components/titulos/Sobre';
+
 import SobreCard from '../components/sobre/SobreCard';
-import Skill from '../components/titulos/Skill';
+
 import Skills from '../components/skills/Skills';
-import Projetos from '../components/titulos/Projetos';
-import Empregos from '../components/titulos/Empregos';
-import Trajetoria from '../components/trajetoria/Trajetoria';
-import Contract from '../components/titulos/Contract';
+
 import Contato from '../components/contato/Contato';
 import Projeto from '../components/projetos/Projeto';
-
-
+import Titulos from '../@lib/Titulos/Titulos';
 
 
 const Home = () => {
   return (
     <div>
       <SocialUni/>
-      <Sobre />
+      <Titulos>
+        <span className="actual-text">&nbsp;Sobre&nbsp;</span>
+        <span className="hover-text" aria-hidden="true">&nbsp;Sobre&nbsp;</span>
+      </Titulos>
       <SobreCard />
-      <Skill />
+      <Titulos>
+        <span className="actual-text">&nbsp;Skill&nbsp;</span>
+        <span className="hover-text" aria-hidden="true">&nbsp;Skill&nbsp;</span>
+      </Titulos>
       <Skills />
-      <Projetos />
+      <Titulos>
+        <span className="actual-text">&nbsp;Projetos&nbsp;</span>
+        <span className="hover-text" aria-hidden="true">&nbsp;Projetos&nbsp;</span>
+      </Titulos>
       <Projeto/>
-      <Empregos />
-      <Trajetoria />
-      <Contract />
+      <Titulos>
+        <span className="actual-text">&nbsp;Contato&nbsp;</span>
+        <span className="hover-text" aria-hidden="true">&nbsp;Contato&nbsp;</span>
+      </Titulos>
       <Contato /> 
     </div>
   )

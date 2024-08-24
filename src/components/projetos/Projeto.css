@@ -1,0 +1,39 @@
+/* 
+    CSS ta feio e meio bugado mas com a mudança de bootstrap para tailwind tem tudo para melhorar 
+*/
+.projeto-card {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 0 0 33.3333%; /* Cada coluna ocupará um terço do espaço disponível */
+    max-width: 33.3333%;
+    padding-right: 15px;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.projeto-div {
+    height: auto;
+    flex-direction: column;
+}
+.github-button{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 576px) {
+    .projeto-card {
+        flex-direction: column;
+        flex-wrap: nowrap !important;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 900px) {
+    .projeto-card {
+        flex-direction: column;
+        flex-wrap: nowrap !important;
+    }
+}

@@ -6,7 +6,7 @@ const Footer = () => {
 
         <div className='rodape'>
             <div className="container d-flex justify-content-center">
-                <p>Direitos reservados por Gabriel Alves</p>
+                <p>Copyright© 2024 Gabriel Alves Batista</p>
             </div>
         </div>
 

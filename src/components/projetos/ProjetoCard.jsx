@@ -4,7 +4,7 @@ import Button from '../../@lib/button/Button'
 
 const ProjetoCard = ({ name, img, link, logo, icones }) => {
   return (
-    <div class="post-card mt-2 ">
+    <div class="post-card mt-2">
       <div className='d-flex justify-content-center'>
 
         <img src={logo} alt="" className="avatar" />

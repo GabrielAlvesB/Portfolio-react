@@ -15,17 +15,17 @@ import vscode from "../../public/img/skills/visual-studio-code.png"
 import NextJs from "../../public/img/skills/nextjs.png"
 
 export const ProjetosList = [
-    {id:0, name: 'MediCenter', img:MediCenter, link:'https://gabrielalvesb.github.io/MediCenter/', logo: B7web, icones:[
+    {id:0, name: 'MediCenter', img:MediCenter, link:'https://github.com/GabrielAlvesB/MediCenter', logo: B7web, icones:[
         {id:0, nome: Html},
         {id:1, nome: Css},
         {id:2, nome: vscode}
     ]},
-    {id:1, name: 'React Multistep Form', img:Multistep, link:'https://multistep-form-react-phi.vercel.app/', logo: Hdc, icones:[
+    {id:1, name: 'React Multistep Form', img:Multistep, link:'https://github.com/GabrielAlvesB/multistep_form_react', logo: Hdc, icones:[
         {id:0, nome: React},
         {id:1, nome: Css},
         {id:2, nome: vscode}
     ]},
-    {id:2, name: 'Loja Zap', img:LojaZap, link:'https://shadcn-loja-nine.vercel.app/', logo: B7web, icones:[
+    {id:2, name: 'Loja Zap', img:LojaZap, link:'https://github.com/GabrielAlvesB/sistemaDeRestauranteJapones', logo: B7web, icones:[
         {id:0, nome: React},
         {id:1, nome: TailWindCss},
         {id:2, nome: NextJs}

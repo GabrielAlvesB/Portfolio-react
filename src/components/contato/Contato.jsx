@@ -83,7 +83,7 @@ const Contato = () => {
 
 
             <div className="formularioContato d-flex justify-content-center  align-items-center">
-                <div className="contrateme">Contatos</div>
+                <div className="contrateme">Contato</div>
                 <div className="formularioInputContato">
                     <form className='inputFormulario d-flex' onSubmit={sendEmail}>
                         <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Nome" />
