@@ -8,13 +8,13 @@ const Footer = () => {
             <div className="container">
                 <p>© 2024 Gabriel Alves Batista. Todos os direitos reservados.</p>
                 <div className="social-links">
-                    <a href="https://github.com/seu-usuario" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/GabrielAlvesB" target="_blank" rel="noopener noreferrer">
                         <FaGithub />
                     </a>
-                    <a href="https://linkedin.com/in/seu-usuario" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/gabrielalvesbatista/" target="_blank" rel="noopener noreferrer">
                         <FaLinkedin />
                     </a>
-                    <a href="https://instagram.com/seu-usuario" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/gabeel.dev/" target="_blank" rel="noopener noreferrer">
                         <FaInstagram />
                     </a>
                 </div>

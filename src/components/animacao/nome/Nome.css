@@ -1,18 +1,12 @@
 .name {
-  background: linear-gradient(90deg, 
-    var(--primary-blue) 0%,
-    var(--accent-purple-light) 50%,
-    var(--primary-blue) 100%
-  );
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--primary-blue);
   font-size: 40px;
   font-weight: 600;
-  text-shadow: 0 0 10px rgba(26, 115, 232, 0.2);
-  animation: shine 8s linear infinite;
   padding: 10px 0;
+  text-shadow:
+    2px 2px 0 var(--accent-purple-light),      /* contorno roxo claro */
+    4px 4px 8px rgba(80, 0, 120, 0.18),       /* profundidade roxa */
+    0 1px 0 #fff;                             /* leve brilho branco para contraste */
 }
 
 .typewriter-wrapper {
@@ -42,11 +36,15 @@
 @media (max-width: 768px) {
   .name {
     font-size: 32px;
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 }
 
 @media (max-width: 576px) {
   .name {
     font-size: 24px;
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 }

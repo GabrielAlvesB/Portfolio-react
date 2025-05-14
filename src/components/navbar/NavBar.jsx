@@ -12,11 +12,16 @@ const NavBar = () => {
   
   const programmingVariations = [
     'Gabriel Alves',
+    'Gabriel Alves.Batista',
     'Gabriel Alves.dev',
     'Gabriel Alves.js',
-    'Gabriel Alves.py',
+    'Gabriel Alves.jsx',
     'Gabriel Alves.ts',
+    'Gabriel Alves.tsx',
     'Gabriel Alves.react',
+    'Gabriel Alves.node',
+    'Gabriel Alves.express',
+    'Gabriel Alves.tailwind',
     'Gabriel Alves.code',
     'Gabriel Alves.tech',
     'Gabriel Alves.script',
@@ -31,16 +36,6 @@ const NavBar = () => {
     'Gabriel Alves.terminal',
     'Gabriel Alves.console',
     'Gabriel Alves.debug',
-    'Gabriel Alves Batista',
-    'Gabriel Alves Batista.dev',
-    'Gabriel Alves Batista.js',
-    'Gabriel Alves Batista.py',
-    'Gabriel Alves Batista.ts',
-    'Gabriel Alves Batista.react',
-    'Gabriel Alves Batista.code',
-    'Gabriel Alves Batista.tech',
-    'Gabriel Alves Batista.script',
-    'Gabriel Alves Batista.algo',
   ];
 
   useEffect(() => {
