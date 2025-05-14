@@ -1,23 +1,153 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
-import Oculos from '../../../public/img/iconePrincipal/logoazul.png'
+import Nav from 'react-bootstrap/Nav';
+import Button from 'react-bootstrap/Button';
+import Oculos from '/img/iconePrincipal/logoazul.png'
 import "./NavBar.css";
-
+import { useState, useEffect } from 'react';
 
 const NavBar = () => {
-  return (
+  const [displayName, setDisplayName] = useState('Gabriel Alves');
+  const [isAnimating, setIsAnimating] = useState(false);
+  
+  const programmingVariations = [
+    'Gabriel Alves',
+    'Gabriel Alves.dev',
+    'Gabriel Alves.js',
+    'Gabriel Alves.py',
+    'Gabriel Alves.ts',
+    'Gabriel Alves.react',
+    'Gabriel Alves.code',
+    'Gabriel Alves.tech',
+    'Gabriel Alves.script',
+    'Gabriel Alves.algo',
+    'Gabriel Alves.bug',
+    'Gabriel Alves.fix',
+    'Gabriel Alves.merge',
+    'Gabriel Alves.push',
+    'Gabriel Alves.pull',
+    'Gabriel Alves.commit',
+    'Gabriel Alves.branch',
+    'Gabriel Alves.terminal',
+    'Gabriel Alves.console',
+    'Gabriel Alves.debug',
+    'Gabriel Alves Batista',
+    'Gabriel Alves Batista.dev',
+    'Gabriel Alves Batista.js',
+    'Gabriel Alves Batista.py',
+    'Gabriel Alves Batista.ts',
+    'Gabriel Alves Batista.react',
+    'Gabriel Alves Batista.code',
+    'Gabriel Alves Batista.tech',
+    'Gabriel Alves Batista.script',
+    'Gabriel Alves Batista.algo',
+  ];
 
+  useEffect(() => {
+    // Espera 3 segundos antes de começar a animação
+    const initialDelay = setTimeout(() => {
+      setIsAnimating(true);
+    }, 3000);
+
+    let currentIndex = 0;
+    const interval = setInterval(() => {
+      if (isAnimating) {
+        currentIndex = (currentIndex + 1) % programmingVariations.length;
+        setDisplayName(programmingVariations[currentIndex]);
+      }
+    }, 2000);
+
+    return () => {
+      clearTimeout(initialDelay);
+      clearInterval(interval);
+    };
+  }, [isAnimating]);
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
     <Navbar expand="lg" className="navbarcor" sticky="top">
-      <Container className=' d-flex justify-content-center align-items-center '>
-        
-        <Navbar.Brand href="#" className='d-flex '>
-            <div className='navbar-imagem-nome d-flex align-items-center' >
-                <img src={Oculos} alt="" />
-            </div>
-            <div className='navBarTitulo d-flex align-items-center'>
-                Gabriel Alves
-            </div>
+      <Container>
+        <Navbar.Brand 
+          href="#" 
+          className='d-flex align-items-center brand-container'
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection('home');
+          }}
+        >
+          <div className='navbar-imagem-nome d-flex align-items-center'>
+            <img src={Oculos} alt="Logo" />
+          </div>
+          <div className='navBarTitulo d-flex align-items-center'>
+            <span className={`name-animation ${isAnimating ? 'animating' : ''}`}>
+              {displayName}
+            </span>
+          </div>
         </Navbar.Brand>
+        
+        <Navbar.Toggle aria-controls="basic-navbar-nav" className="navbar-toggler-custom" />
+        
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto align-items-center">
+            <Nav.Link 
+              href="#home" 
+              className="nav-link-custom"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('home');
+              }}
+            >
+              Início
+            </Nav.Link>
+            <Nav.Link 
+              href="#sobre" 
+              className="nav-link-custom"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('sobre');
+              }}
+            >
+              Sobre
+            </Nav.Link>
+            <Nav.Link 
+              href="#habilidades" 
+              className="nav-link-custom"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('habilidades');
+              }}
+            >
+              Habilidades
+            </Nav.Link>
+            <Nav.Link 
+              href="#projetos" 
+              className="nav-link-custom"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('projetos');
+              }}
+            >
+              Projetos
+            </Nav.Link>
+            <Button 
+              href="#contato" 
+              className="contact-button ms-3"
+              variant="outline-primary"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('contato');
+              }}
+            >
+              Contato
+            </Button>
+          </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   )

@@ -171,3 +171,29 @@
       transform: translateY(0px);
     }
   }
+
+@media screen and (max-width: 992px) {
+    .card {
+        width: 280px;
+        height: 270px;
+    }
+
+    .back-content img {
+        width: 130px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .card {
+        width: 260px;
+        height: 250px;
+    }
+
+    .back-content img {
+        width: 120px;
+    }
+
+    .title {
+        font-size: 12px;
+    }
+}

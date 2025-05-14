@@ -1,7 +1,52 @@
-.name{
-  background: linear-gradient(90deg, #03a9f4, #f441a5, #f441a5, #03a9f4);
+.name {
+  background: linear-gradient(90deg, 
+    var(--primary-blue) 0%,
+    var(--accent-purple-light) 50%,
+    var(--primary-blue) 100%
+  );
+  background-size: 200% auto;
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
-  
   font-size: 40px;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(26, 115, 232, 0.2);
+  animation: shine 8s linear infinite;
+  padding: 10px 0;
+}
+
+.typewriter-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.typewriter-wrapper::after {
+  content: '|';
+  position: absolute;
+  right: -5px;
+  color: var(--primary-blue);
+  animation: blink 1s infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .name {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 576px) {
+  .name {
+    font-size: 24px;
+  }
 }

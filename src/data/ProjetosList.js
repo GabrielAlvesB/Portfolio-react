@@ -1,18 +1,19 @@
-import MediCenter from "../../public/img/projetos/MediCenter/01.png"
-import Multistep from "../../public/img/projetos/react_multistep_form/01-alt.png"
-import LojaZap from "../../public/img/projetos/Loja_Zap_shadcn_ui/01.png"
+// Imagens dos Projetos
+import MediCenter from "/img/projetos/MediCenter/01.png"
+import Multistep from "/img/projetos/react_multistep_form/01-alt.png"
+import LojaZap from "/img/projetos/Loja_Zap_shadcn_ui/01.png"
 
-//Logos
-import B7web from "../../public/img/projetos/logos/b7web.png"
-import Hdc from "../../public/img/projetos/logos/HoradeCodar.png"
+// Logos das Empresas
+import B7web from "/img/projetos/logos/b7web.png"
+import Hdc from "/img/projetos/logos/HoradeCodar.png"
 
-//Icone
-import Html from "../../public/img/skills/Html.png"
-import Css from "../../public/img/skills/Css.png"
-import React from "../../public/img/skills/react.png"
-import TailWindCss from "../../public/img/skills/tailwindcss.png"
-import vscode from "../../public/img/skills/visual-studio-code.png"
-import NextJs from "../../public/img/skills/nextjs.png"
+// Ícones de Tecnologias
+import Html from "/img/skills/Html.png"
+import Css from "/img/skills/Css.png"
+import React from "/img/skills/react.png"
+import TailWindCss from "/img/skills/tailwindcss.png"
+import vscode from "/img/skills/visual-studio-code.png"
+import NextJs from "/img/skills/nextjs.png"
 
 export const ProjetosList = [
     {id:0, name: 'MediCenter', img:MediCenter, link:'https://github.com/GabrielAlvesB/MediCenter', logo: B7web, icones:[

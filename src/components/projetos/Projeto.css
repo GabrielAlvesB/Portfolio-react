@@ -2,38 +2,63 @@
     CSS ta feio e meio bugado mas com a mudança de bootstrap para tailwind tem tudo para melhorar 
 */
 .projeto-card {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+    padding: 20px;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .col {
-    flex: 0 0 33.3333%; /* Cada coluna ocupará um terço do espaço disponível */
-    max-width: 33.3333%;
-    padding-right: 15px;
-    padding-left: 15px;
-    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .projeto-div {
-    height: auto;
+    min-height: auto;
     flex-direction: column;
-}
-.github-button{
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    padding: 20px;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
+.github-button {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Responsividade */
 @media only screen and (max-width: 576px) {
     .projeto-card {
-        flex-direction: column;
-        flex-wrap: nowrap !important;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 10px;
+    }
+    
+    .projeto-div {
+        padding: 10px;
     }
 }
 
-@media (min-width: 577px) and (max-width: 900px) {
+@media (min-width: 577px) and (max-width: 992px) {
     .projeto-card {
-        flex-direction: column;
-        flex-wrap: nowrap !important;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 15px;
+    }
+}
+
+@media (min-width: 993px) {
+    .projeto-card {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        padding: 20px;
     }
 }

@@ -1,6 +1,6 @@
-import Apresentacao from "../../public/sobre-mim/apresentação.png"
-import Habilidades from "../../public/sobre-mim/minhashabilidades.png"
-import Trajetoria from "../../public/sobre-mim/trajetória.png"
+import Apresentacao from "/sobre-mim/apresentação.png"
+import Habilidades from "/sobre-mim/minhashabilidades.png"
+import Trajetoria from "/sobre-mim/trajetória.png"
 
 export const sobreList = [
   {imagem: Apresentacao, titulo: "Apresentação", texto:"Meu nome é Gabriel Alves Batista e sou um jovem Desenvolvedor Front-end com experiência em React.js, JavaScript, TypeScript, Boo,tstrap e Linux. Tenho paixão por criar componentes reutilizáveis e participar de projetos que seguem Metodologias Ágeis."},

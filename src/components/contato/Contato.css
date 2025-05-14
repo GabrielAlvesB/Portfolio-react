@@ -1,19 +1,51 @@
 @media only screen and (max-width: 576px){
-    .imagemContato{
+    .containerContato {
+        padding: 1rem;
+    }
+    
+    .imagemContato {
         display: none !important;
+    }
+    
+    .formularioContato {
+        padding: 1rem;
+    }
+    
+    .contrateme {
+        font-size: 1.5rem;
     }
 }
 
 @media (min-width: 577px) and (max-width: 800px) {
-   .imagemContato{
-    display: none!important;
- 
-   }
+    .imagemContato {
+        display: none !important;
+    }
+    
+    .containerContato {
+        padding: 1.5rem;
+    }
+}
+
+@media (min-width: 801px) {
+    .containerContato {
+        display: flex;
+        align-items: center;
+    }
+    
+    .imagemContato {
+        flex: 1;
+    }
+    
+    .formularioContato {
+        flex: 1;
+    }
 }
 
 .containerContato{
     width: 100%;
-    height: 450px;
+    min-height: 450px;
+    padding: 2rem;
+    gap: 2rem;
 }
 
 .imagemContato, .formularioContato{
@@ -22,11 +54,17 @@
 }
 .imagemContato img{
     height: 100%;
+    max-width: 100%;
+    object-fit: contain;
 }
 
 .formularioContato{
-    border-radius: 5%;
-    border: solid 5px #48bfe3;
+    border-radius: 15px;
+    border: 2px solid #48bfe3;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .formularioContato, .inputFormulario{
@@ -34,38 +72,43 @@
 }
 
 .contrateme{
-    width: 95%;
-    height: 40px;
+    width: 100%;
+    height: auto;
     text-align: center;
-    font-size: 30px;
+    font-size: 2rem;
     color: #fff;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
 }
 
 .formularioInputContato{
-    width: 95%;
-    height: 350px;
+    width: 100%;
+    height: auto;
 }
 input::placeholder, textarea::placeholder{
-    color: #fff;
+    color: rgba(255, 255, 255, 0.7);
 }
 .inputFormulario input, textarea{
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 1rem 0;
+    width: 100%;
     text-decoration: none;
     border: none;
-    border-bottom: 1px solid #fff;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
     background-color: transparent;
     outline: none;
     color: #fff;
-    padding: 5px;
+    padding: 0.8rem;
+    transition: all 0.3s ease;
+}
+.inputFormulario input:focus, textarea:focus {
+    border-bottom-color: #48bfe3;
 }
 .errorMensagemcss{
     background-color: red !important;
 }
 
 textarea{
-    max-height: 110px;
-    min-height: 110px;
+    min-height: 120px;
+    resize: vertical;
 }
 

@@ -1,18 +1,47 @@
-.social,.imagem{
+.social, .imagem {
     width: 100%;
+    padding: 20px;
 }
 
-.social a{
+.social a {
     text-decoration: none;
 }
-.principal{
-    height: calc(100vh - 80px);
+
+.principal {
+    min-height: calc(100vh - 80px);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
-@media only screen and (max-width: 576px){
-    .principal{
-        flex-direction: column-reverse;
-        height: auto;
-        
+
+@media only screen and (max-width: 992px) {
+    .principal {
+        flex-direction: column;
+        min-height: auto;
+        padding: 10px;
     }
- 
+
+    .social, .imagem {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .social {
+        order: 2;
+    }
+
+    .imagem {
+        order: 1;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .principal {
+        padding: 5px;
+    }
+
+    .social, .imagem {
+        padding: 5px;
+    }
 }

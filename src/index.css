@@ -1,0 +1,134 @@
+:root {
+  /* Cores principais */
+  --primary-blue: #1a73e8;
+  --primary-blue-light: #4285f4;
+  --primary-blue-dark: #0d47a1;
+  
+  /* Cores de destaque */
+  --accent-purple: #9c27b0;
+  --accent-purple-light: #ba68c8;
+  --accent-purple-dark: #7b1fa2;
+  
+  /* Cores de fundo */
+  --bg-dark: #101728;
+  --bg-light: #f8f9fa;
+  
+  /* Cores de texto */
+  --text-light: #ffffff;
+  --text-dark: #333333;
+  
+  /* Cores de gradiente */
+  --gradient-blue: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light));
+  --gradient-purple: linear-gradient(135deg, var(--accent-purple), var(--accent-purple-light));
+  --gradient-mixed: linear-gradient(135deg, var(--primary-blue), var(--accent-purple));
+
+  /* Breakpoints */
+  --mobile: 576px;
+  --tablet: 992px;
+  --desktop: 1200px;
+}
+
+/* Estilos globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container responsivo */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Melhorias de renderização para imagens */
+img {
+  max-width: 100%;
+  height: auto;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-blue);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-purple);
+}
+
+/* Media Queries Globais */
+@media (max-width: 992px) {
+  html {
+    font-size: 15px;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .container {
+    padding: 0 10px;
+  }
+}
+
+/* Utilitários de Responsividade */
+.hide-mobile {
+  display: block;
+}
+
+.show-mobile {
+  display: none;
+}
+
+@media (max-width: 576px) {
+  .hide-mobile {
+    display: none;
+  }
+  
+  .show-mobile {
+    display: block;
+  }
+}
+
+/* ... resto do seu CSS existente ... */
