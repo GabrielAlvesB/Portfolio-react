@@ -6,12 +6,12 @@ import { sobreList } from '../../data/SobreList'
 
 const SobreCard = () => {
   return (
-    <div className='d-flex justify-content-center align-items-center sobrecard'>
+    <div className='sobrecard'>
 
     {
       sobreList.map((sobre, index) =>{
         return(
-          <div key={index}  className="p-1">
+          <div key={index}  className="">
           <Card imagem={sobre.imagem} titulo={sobre.titulo} texto={sobre.texto} />
         </div>
         )

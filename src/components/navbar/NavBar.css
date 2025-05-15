@@ -8,6 +8,29 @@
 
 }
 
+@media only screen and (max-width: 991px) {
+  .navbar-toggler-custom,
+  .navbar-collapse {
+    display: none !important;
+  }
+
+  .navbar-brand {
+    width: 100%;
+    text-align: center;
+    justify-content: center !important;
+  }
+
+  .navbar-imagem-nome,
+  .navBarTitulo {
+    margin-left: 0 !important;
+    margin-right: 5px;
+    justify-content: center !important;
+  }
+
+  .brand-container {
+    justify-content: center !important;
+  }
+}
 
 .navbar-imagem-nome img{
     width: auto;
@@ -230,23 +253,18 @@ html {
   
   .navBarTitulo {
     font-size: 18px !important;
-    min-width: 200px;
-    padding-left: 5px;
-  }
-  
-  .nav-link-custom {
-    font-size: 1rem;
-    margin: 5px 0;
+    min-width: auto;
+    padding-left: 0;
     text-align: center;
   }
-
+  
+  .nav-link-custom,
   .contact-button {
-    margin: 10px auto !important;
-    display: block !important;
-    width: 80% !important;
+    /* Se você não removeu o Collapse no JSX, mas o escondeu via CSS, estes estilos podem não ser necessários, */
+    /* mas se você quiser garantir que não afetam nada, pode adicioná-los */
   }
 
   .navbar-imagem-nome {
-    margin-right: 10px;
+    margin-right: 5px;
   }
 }

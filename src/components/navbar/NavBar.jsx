@@ -70,7 +70,7 @@ const NavBar = () => {
       <Container>
         <Navbar.Brand 
           href="#" 
-          className='d-flex align-items-center brand-container'
+          className='d-flex align-items-center brand-container justify-content-center justify-content-lg-between'
           onClick={(e) => {
             e.preventDefault();
             scrollToSection('home');
