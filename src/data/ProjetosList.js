@@ -21,7 +21,7 @@ import NextJs from "/img/skills/nextjs.png"
 import JavaScript from "/img/skills/javascript.png"
 
 export const ProjetosList = [
-    {id:0, name: 'Residencial Desidério Perim', img:ResidencialPerim, link:'https://carlosarturb.github.io/lp-desiderio-perim/', logo: logoBranco, logo2: logoCarlos, freela: true, icones:[
+    {id:0, name: 'Residencial Desidério Perim', img:ResidencialPerim, link:'https://carlosarturb.github.io/lp-desiderio-perim/', logo: logoBranco, logo2: logoCarlos, freela: true, isNew: true, icones:[
         {id:0, nome: Html},
         {id:1, nome: Css},
         {id:2, nome: JavaScript}
