@@ -2,13 +2,12 @@ import React from 'react'
 import './ProjetoCard.css'
 import Button from '../../@lib/button/Button'
 
-const ProjetoCard = ({ name, img, link, logo, icones }) => {
+const ProjetoCard = ({ name, img, link, logo, logo2, freela, icones }) => {
   return (
     <div class="post-card mt-2">
-      <div className='d-flex justify-content-center'>
-
+      <div className='d-flex justify-content-center gap-4'>
         <img src={logo} alt="" className="avatar" />
-
+        {freela && <img src={logo2} alt="" className="avatar" />}
       </div>
       <div className='d-flex justify-content-center mt-2'>
         <p href="#" class="titleProjetos">{name}</p>

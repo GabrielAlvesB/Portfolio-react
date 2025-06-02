@@ -7,6 +7,7 @@
     display: flex;
     align-items: center;
     border: 1px solid #0e76a8;
+    border-radius: 5px;
     background-color: #0e76a8;
     overflow: hidden;
   }
