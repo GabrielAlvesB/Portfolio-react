@@ -5,8 +5,11 @@ import Button from 'react-bootstrap/Button';
 import Oculos from '/img/iconePrincipal/logoazul.png'
 import "./NavBar.css";
 import { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const NavBar = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [displayName, setDisplayName] = useState('Gabriel Alves');
   const [isAnimating, setIsAnimating] = useState(false);
   
@@ -58,12 +61,26 @@ const NavBar = () => {
     };
   }, [isAnimating]);
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  const handleNavigation = (sectionId) => {
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: sectionId } });
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
+
+  useEffect(() => {
+    // Verifica se há uma seção para rolar após a navegação
+    if (location.state?.scrollTo) {
+      const element = document.getElementById(location.state.scrollTo);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
 
   return (
     <Navbar expand="lg" className="navbarcor" sticky="top">
@@ -73,7 +90,7 @@ const NavBar = () => {
           className='d-flex align-items-center brand-container justify-content-center justify-content-lg-between'
           onClick={(e) => {
             e.preventDefault();
-            scrollToSection('home');
+            handleNavigation('home');
           }}
         >
           <div className='navbar-imagem-nome d-flex align-items-center'>
@@ -95,7 +112,7 @@ const NavBar = () => {
               className="nav-link-custom"
               onClick={(e) => {
                 e.preventDefault();
-                scrollToSection('home');
+                handleNavigation('home');
               }}
             >
               Início
@@ -105,7 +122,7 @@ const NavBar = () => {
               className="nav-link-custom"
               onClick={(e) => {
                 e.preventDefault();
-                scrollToSection('sobre');
+                handleNavigation('sobre');
               }}
             >
               Sobre
@@ -115,7 +132,7 @@ const NavBar = () => {
               className="nav-link-custom"
               onClick={(e) => {
                 e.preventDefault();
-                scrollToSection('habilidades');
+                handleNavigation('habilidades');
               }}
             >
               Habilidades
@@ -125,7 +142,7 @@ const NavBar = () => {
               className="nav-link-custom"
               onClick={(e) => {
                 e.preventDefault();
-                scrollToSection('projetos');
+                handleNavigation('projetos');
               }}
             >
               Projetos
@@ -136,7 +153,7 @@ const NavBar = () => {
               variant="outline-primary"
               onClick={(e) => {
                 e.preventDefault();
-                scrollToSection('contato');
+                handleNavigation('contato');
               }}
             >
               Contato
