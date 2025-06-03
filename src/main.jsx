@@ -8,7 +8,7 @@ import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom'
 import ErrorPage from './routes/ErrorPage.jsx';
 import Home from './routes/Home.jsx';
 import Galeria from './routes/Galeria.jsx';
-
+import Certificados from './routes/certificados.jsx';
 
 const router = createBrowserRouter([
   {
@@ -21,8 +21,8 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: "galeria",
-        element: <Galeria />
+        path: "certificados",
+        element: <Certificados/>
       },
       
     ]

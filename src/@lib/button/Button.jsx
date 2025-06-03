@@ -37,7 +37,7 @@ const Button = ({ pattern, size, type = "button", name }) => {
     const buttonDownload = () => {
         return (
             <button className="buttonDownload" type={type}>
-                <span className="button__text">Download</span>
+                <span className="button__text">Currículo</span>
                 <span className="button__icon"><Download /></span>
             </button>
         )

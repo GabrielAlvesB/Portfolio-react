@@ -1,63 +1,74 @@
 /* botão de download inicio*/
 .buttonDownload {
     position: relative;
-    width: 170px;
+    width: 180px;
     height: 40px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    border: 1px solid #0e76a8;
+    border: none;
     border-radius: 5px;
-    background-color: #0e76a8;
+    background: linear-gradient(45deg, #2196F3, #00BCD4);
     overflow: hidden;
-  }
-  
-  .buttonDownload, .button__icon, .button__text {
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+    transition: all 0.3s ease;
+    padding: 0 10px;
+}
+
+.buttonDownload, .button__icon, .button__text {
     transition: all 0.3s;
-  }
-  
-  .buttonDownload .button__text {
-    transform: translateX(22px);
+}
+
+.buttonDownload .button__text {
+    transform: translateX(0);
     color: #fff;
     font-weight: 600;
-  }
-  
-  .buttonDownload .button__icon {
-    position: absolute;
-    transform: translateX(129px);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 1;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.buttonDownload .button__icon {
+    position: relative;
+    transform: translateX(0);
     height: 100%;
     width: 39px;
-    background-color: #0e76a8;
+    background: none;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  .buttonDownload .svg {
+    transition: all 0.3s ease;
+}
+
+.buttonDownload .svg {
     width: 20px;
     fill: #fff;
-  }
-  
-  .buttonDownload:hover {
-    background: #0e76a8;
-  }
-  
-  .buttonDownload:hover .button__text {
+}
+
+.buttonDownload:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4);
+}
+
+.buttonDownload:hover .button__text {
+    background: linear-gradient(90deg, #f441a5, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
-  }
-  
-  .buttonDownload:hover .button__icon {
-    width: 175px;
-    transform: translateX(0);
-  }
-  
-  .buttonDownload:active .button__icon {
-    background-color: #0e76a8;
-  }
-  
-  .buttonDownload:active {
-    border: 1px solid #0e76a8;
-  }
+    opacity: 1;
+    transform: translateX(-3px);
+}
+
+.buttonDownload:hover .button__icon {
+    transform: translateX(3px);
+}
+
+.buttonDownload:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+}
 /* botão de download final*/
 
 
