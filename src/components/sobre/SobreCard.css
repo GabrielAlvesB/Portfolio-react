@@ -1,34 +1,401 @@
-.sobrecard {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    padding: 30px;
+/* Container Principal */
+.sobre-container {
     width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-    place-items: center;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.sobre-wrapper {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* Abas de Navegação */
+.sobre-tabs {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: slideInDown 0.8s ease-out;
+}
+
+.tab-button {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1.8rem;
+    background: linear-gradient(135deg, rgba(72, 191, 227, 0.1) 0%, rgba(156, 39, 176, 0.1) 100%);
+    border: 2px solid rgba(72, 191, 227, 0.3);
+    border-radius: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.tab-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #48bfe3, #9c27b0);
+    z-index: -1;
+    transition: left 0.4s ease;
+    opacity: 0.1;
+}
+
+.tab-button:hover {
+    border-color: rgba(72, 191, 227, 0.6);
+    color: #48bfe3;
+    background: linear-gradient(135deg, rgba(72, 191, 227, 0.15) 0%, rgba(156, 39, 176, 0.15) 100%);
+    transform: translateY(-3px);
+}
+
+.tab-button.active {
+    border-color: #48bfe3;
+    background: linear-gradient(135deg, rgba(72, 191, 227, 0.25) 0%, rgba(156, 39, 176, 0.25) 100%);
+    color: #48bfe3;
+    box-shadow: 0 8px 30px rgba(72, 191, 227, 0.2);
+    transform: translateY(-3px);
+}
+
+.tab-button svg {
+    transition: all 0.4s ease;
+}
+
+.tab-button.active svg {
+    color: #9c27b0;
+}
+
+/* Container de Conteúdo */
+.sobre-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    animation: slideInUp 0.8s ease-out 0.2s both;
+}
+
+.content-tabs-container {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+}
+
+.content-tab {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(50px) scale(0.95);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.content-tab.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0) scale(1);
+    pointer-events: auto;
+}
+
+/* Conteúdo Interno */
+.content-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, rgba(72, 191, 227, 0.08) 0%, rgba(156, 39, 176, 0.08) 100%);
+    border: 1px solid rgba(72, 191, 227, 0.2);
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Imagem */
+.content-image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+}
+
+.content-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 30px rgba(72, 191, 227, 0.2));
+    transition: all 0.4s ease;
+    animation: imageFloat 3s ease-in-out infinite;
+}
+
+.content-tab.active .content-image img {
+    filter: drop-shadow(0 15px 40px rgba(72, 191, 227, 0.3));
+}
+
+.image-glow {
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(72, 191, 227, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: glow 3s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes imageFloat {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+    }
+    50% {
+        transform: translateY(-15px) scale(1.02);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+/* Texto */
+.content-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    animation: slideInRight 0.8s ease-out;
+}
+
+.content-text h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #48bfe3 0%, #9c27b0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+    animation: titleFadeIn 0.8s ease-out 0.2s both;
+}
+
+.content-text p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    animation: textFadeIn 0.8s ease-out 0.3s both;
+}
+
+/* Pontos de Progresso */
+.progress-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(72, 191, 227, 0.3);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+}
+
+.dot:hover {
+    background: rgba(72, 191, 227, 0.6);
+    transform: scale(1.3);
+}
+
+.dot.active {
+    background: linear-gradient(135deg, #48bfe3, #9c27b0);
+    box-shadow: 0 4px 15px rgba(72, 191, 227, 0.4);
+    transform: scale(1.2);
+}
+
+/* Animações Gerais */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes titleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media only screen and (max-width: 768px) {
+    .sobre-wrapper {
+        gap: 2rem;
+    }
+
+    .sobre-tabs {
+        gap: 0.8rem;
+    }
+
+    .tab-button {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .tab-button span {
+        display: none;
+    }
+
+    .content-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 1.5rem;
+        min-height: auto;
+    }
+
+    .content-image {
+        height: 250px;
+    }
+
+    .content-text h3 {
+        font-size: 1.5rem;
+    }
+
+    .content-text p {
+        font-size: 0.95rem;
+    }
 }
 
 @media only screen and (max-width: 576px) {
-    .sobrecard {
+    .sobre-container {
+        padding: 1rem;
+    }
+
+    .sobre-wrapper {
+        gap: 1.5rem;
+    }
+
+    .sobre-tabs {
+        gap: 0.5rem;
+        justify-content: flex-center;
+        overflow-x: auto;
+        padding: 0.5rem;
+    }
+
+    .tab-button {
+        flex-shrink: 0;
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+        border-radius: 10px;
+    }
+
+    .content-inner {
         grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 5px;
+        gap: 1.5rem;
+        padding: 1.2rem;
+        border-radius: 20px;
     }
-}
 
-@media (min-width: 577px) and (max-width: 992px) {
-    .sobrecard {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-        padding: 20px;
+    .content-image {
+        height: 200px;
     }
-}
 
-@media (min-width: 993px) {
-    .sobrecard {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-        padding: 30px;
+    .content-text h3 {
+        font-size: 1.3rem;
+    }
+
+    .content-text p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .progress-dots {
+        gap: 0.6rem;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
     }
 }

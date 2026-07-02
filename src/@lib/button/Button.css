@@ -86,24 +86,31 @@
     background-size: 300%;
     border-radius: 30px;
     z-index: 1;
-  }
-  
-  .buttonGeneric:hover {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(3, 169, 244, 0.3);
+}
+
+.buttonGeneric:hover:not(:disabled) {
     animation: ani 8s linear infinite;
     border: none;
-  }
-  
-  @keyframes ani {
+    box-shadow: 0 6px 25px rgba(244, 65, 165, 0.4);
+    transform: translateY(-2px);
+}
+
+@keyframes ani {
     0% {
-      background-position: 0%;
+        background-position: 0%;
     }
-  
+
     100% {
-      background-position: 400%;
+        background-position: 400%;
     }
-  }
-  
-  .buttonGeneric:before {
+}
+
+.buttonGeneric:before {
     content: '';
     position: absolute;
     top: -5px;
@@ -115,31 +122,45 @@
     background-size: 400%;
     border-radius: 35px;
     transition: 1s;
-  }
-  
-  .buttonGeneric:hover::before {
-    filter: blur(20px);
-  }
-  
-  .buttonGeneric:active {
-    background: linear-gradient(32deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
-  }
+    opacity: 0;
+}
 
-  .smallGeneric{
+.buttonGeneric:hover::before:not(:disabled) {
+    filter: blur(20px);
+    opacity: 1;
+}
+
+.buttonGeneric:active:not(:disabled) {
+    background: linear-gradient(32deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+    transform: translateY(0);
+}
+
+.buttonGeneric:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: 0 4px 15px rgba(3, 169, 244, 0.1);
+}
+
+.smallGeneric {
     font-size: 10px;
     width: 6em;
     height: 2em;
     line-height: 1em;
-  }
-  .mediumGeneric{
+    padding: 0.3em 0.6em;
+}
+
+.mediumGeneric {
     font-size: 14px;
     width: 9em;
     height: 3em;
     line-height: 2em;
-  }
-  .highGeneric{
+    padding: 0.5em 1em;
+}
+
+.highGeneric {
     font-size: 18px;
     width: 11em;
     height: 5em;
     line-height: 3em;
-  }
+    padding: 0.7em 1.2em;
+}

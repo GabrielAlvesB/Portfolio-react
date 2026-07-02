@@ -5,6 +5,7 @@ import Button from '../../@lib/button/Button'
 import AvatarProgramador from '/img/avatar/Programador.png'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FiUser, FiMail, FiMessageSquare, FiSend } from 'react-icons/fi';
 
 const Contato = () => {
     const [formData, setFormData] = useState({
@@ -77,45 +78,75 @@ const Contato = () => {
     return (
         <div className='containerContato'>
             <div className="imagemContato">
-                <img src={AvatarProgramador} alt="Avatar Programador" />
+                <div className="imagemWrapperContato">
+                    <img src={AvatarProgramador} alt="Avatar Programador" />
+                    <div className="imagemGlowContato"></div>
+                </div>
             </div>
 
             <div className="formularioContato">
-                <h2 className="contrateme">Entre em Contato</h2>
+                <div className="formHeaderContato">
+                    <h2 className="contrateme">Entre em Contato</h2>
+                    <p className="formSubtitleContato">Deixe uma mensagem e entrarei em contato em breve</p>
+                </div>
+
                 <div className="formularioInputContato">
                     <form className='inputFormulario' onSubmit={sendEmail}>
-                        <input
-                            type="text"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            placeholder="Seu Nome"
-                            disabled={isLoading}
-                        />
-                        <input
-                            type="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            placeholder="Seu E-mail"
-                            disabled={isLoading}
-                        />
-                        <input
-                            type="text"
-                            name="assunto"
-                            value={formData.assunto}
-                            onChange={handleChange}
-                            placeholder="Assunto"
-                            disabled={isLoading}
-                        />
-                        <textarea
-                            name="mensagem"
-                            value={formData.mensagem}
-                            onChange={handleChange}
-                            placeholder="Digite sua mensagem"
-                            disabled={isLoading}
-                        />
-                        <div className='d-flex justify-content-center align-items-center m-4'>
+                        <div className="inputGroupContato">
+                            <FiUser className="inputIconContato" />
+                            <input
+                                type="text"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleChange}
+                                placeholder="Seu Nome"
+                                disabled={isLoading}
+                                className="inputFieldContato"
+                            />
+                            <div className="inputUnderlineContato"></div>
+                        </div>
+
+                        <div className="inputGroupContato">
+                            <FiMail className="inputIconContato" />
+                            <input
+                                type="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                placeholder="Seu E-mail"
+                                disabled={isLoading}
+                                className="inputFieldContato"
+                            />
+                            <div className="inputUnderlineContato"></div>
+                        </div>
+
+                        <div className="inputGroupContato">
+                            <FiMessageSquare className="inputIconContato" />
+                            <input
+                                type="text"
+                                name="assunto"
+                                value={formData.assunto}
+                                onChange={handleChange}
+                                placeholder="Assunto"
+                                disabled={isLoading}
+                                className="inputFieldContato"
+                            />
+                            <div className="inputUnderlineContato"></div>
+                        </div>
+
+                        <div className="textareaGroupContato">
+                            <textarea
+                                name="mensagem"
+                                value={formData.mensagem}
+                                onChange={handleChange}
+                                placeholder="Digite sua mensagem"
+                                disabled={isLoading}
+                                className="textareaFieldContato"
+                            />
+                            <div className="textareaUnderlineContato"></div>
+                        </div>
+
+                        <div className='buttonContainerContato'>
                             <Button 
                                 size="medium" 
                                 type='submit' 

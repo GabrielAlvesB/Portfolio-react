@@ -4,33 +4,31 @@
   font-weight: 600;
   padding: 10px 0;
   text-shadow:
-    2px 2px 0 var(--accent-purple-light),      /* contorno roxo claro */
-    4px 4px 8px rgba(80, 0, 120, 0.18),       /* profundidade roxa */
-    0 1px 0 #fff;                             /* leve brilho branco para contraste */
+    2px 2px 0 var(--accent-purple-light),
+    4px 4px 8px rgba(80, 0, 120, 0.18),
+    0 1px 0 #fff;
 }
 
 .typewriter-wrapper {
   display: inline-block;
   position: relative;
+  min-height: 50px;
 }
 
-.typewriter-wrapper::after {
-  content: '|';
-  position: absolute;
-  right: -5px;
+/* Cursor do Typewriter */
+.typewriter-wrapper .Typewriter__cursor {
   color: var(--primary-blue);
-  animation: blink 1s infinite;
+  animation: cursor-blink 1s infinite;
+  font-weight: 700;
 }
 
-@keyframes shine {
-  to {
-    background-position: 200% center;
+@keyframes cursor-blink {
+  0%, 100% { 
+    opacity: 1;
   }
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  50% { 
+    opacity: 0;
+  }
 }
 
 @media (max-width: 768px) {

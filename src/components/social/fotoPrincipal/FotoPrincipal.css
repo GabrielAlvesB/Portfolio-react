@@ -36,9 +36,13 @@
     background: transparent;
     mix-blend-mode: normal;
     isolation: isolate;
-    filter: brightness(1.1) contrast(1.1);
+    filter: brightness(1.1) contrast(1.1) saturate(1.05);
     box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
     transition: opacity 1s ease-in-out;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
 #Custom-photo img.base-image {

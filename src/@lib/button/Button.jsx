@@ -49,13 +49,6 @@ const Button = ({ pattern, size, type = "button", name }) => {
         default:
             return buttonGeneric();
     }
-
-    // return (
-    //     <div>
-    //         {pattern === "generic" ? buttonGeneric() : buttonDownload()}
-
-    //     </div>
-    // )
 }
 
 export default Button

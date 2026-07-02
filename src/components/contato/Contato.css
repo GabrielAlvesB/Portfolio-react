@@ -1,114 +1,369 @@
-@media only screen and (max-width: 576px){
-    .containerContato {
-        padding: 1rem;
-    }
-    
-    .imagemContato {
-        display: none !important;
-    }
-    
-    .formularioContato {
-        padding: 1rem;
-    }
-    
-    .contrateme {
-        font-size: 1.5rem;
-    }
-}
-
-@media (min-width: 577px) and (max-width: 800px) {
-    .imagemContato {
-        display: none !important;
-    }
-    
-    .containerContato {
-        padding: 1.5rem;
-    }
-}
-
-@media (min-width: 801px) {
-    .containerContato {
-        display: flex;
-        align-items: center;
-    }
-    
-    .imagemContato {
-        flex: 1;
-    }
-    
-    .formularioContato {
-        flex: 1;
-    }
-}
-
-.containerContato{
+/* Layout Principal */
+.containerContato {
     width: 100%;
+    min-height: 500px;
+    padding: 3rem 2rem;
+    gap: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: slideInUp 0.8s ease-out;
+}
+
+/* Imagem */
+.imagemContato {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 450px;
-    padding: 2rem;
-    gap: 2rem;
 }
 
-.imagemContato, .formularioContato{
+.imagemWrapperContato {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagemWrapperContato img {
     width: 100%;
     height: 100%;
-}
-.imagemContato img{
-    height: 100%;
-    max-width: 100%;
     object-fit: contain;
+    filter: drop-shadow(0 10px 40px rgba(72, 191, 227, 0.3));
+    animation: floatImage 4s ease-in-out infinite;
+    transition: filter 0.3s ease;
 }
 
-.formularioContato{
-    border-radius: 15px;
-    border: 2px solid #48bfe3;
-    padding: 1.5rem;
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+.imagemWrapperContato:hover img {
+    filter: drop-shadow(0 15px 50px rgba(72, 191, 227, 0.5));
 }
 
-.formularioContato, .inputFormulario{
+.imagemGlowContato {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(72, 191, 227, 0.2) 0%, transparent 70%);
+    animation: glowPulse 3s ease-in-out infinite;
+    z-index: -1;
+}
+
+/* Formulário */
+.formularioContato {
+    flex: 1;
+    border-radius: 20px;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, rgba(72, 191, 227, 0.1) 0%, rgba(156, 39, 176, 0.1) 100%);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(72, 191, 227, 0.3);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    animation: slideInRight 0.8s ease-out;
+    transition: all 0.3s ease;
+}
+
+.formularioContato:hover {
+    border-color: rgba(72, 191, 227, 0.6);
+    box-shadow: 
+        0 12px 40px rgba(72, 191, 227, 0.2),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Header do Formulário */
+.formHeaderContato {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.contrateme {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #48bfe3 0%, #9c27b0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0 0 0.5rem 0;
+    animation: slideInDown 0.8s ease-out;
+}
+
+.formSubtitleContato {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    margin: 0;
+    font-weight: 300;
+}
+
+/* Inputs */
+.formularioInputContato {
+    width: 100%;
+    display: flex;
     flex-direction: column;
 }
 
-.contrateme{
-    width: 100%;
-    height: auto;
-    text-align: center;
-    font-size: 2rem;
-    color: #fff;
-    margin-bottom: 1.5rem;
-    font-weight: 600;
+.inputFormulario {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-.formularioInputContato{
-    width: 100%;
-    height: auto;
+.inputGroupContato {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
 }
-input::placeholder, textarea::placeholder{
-    color: rgba(255, 255, 255, 0.7);
-}
-.inputFormulario input, textarea{
-    margin: 1rem 0;
-    width: 100%;
-    text-decoration: none;
-    border: none;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-    background-color: transparent;
-    outline: none;
-    color: #fff;
-    padding: 0.8rem;
+
+.inputIconContato {
+    font-size: 1.3rem;
+    color: #48bfe3;
+    flex-shrink: 0;
     transition: all 0.3s ease;
 }
-.inputFormulario input:focus, textarea:focus {
-    border-bottom-color: #48bfe3;
-}
-.errorMensagemcss{
-    background-color: red !important;
+
+.inputGroupContato:focus-within .inputIconContato {
+    color: #9c27b0;
+    transform: scale(1.2);
 }
 
-textarea{
-    min-height: 120px;
+.inputFieldContato {
+    flex: 1;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 0.8rem 0.5rem;
+    color: #fff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.inputFieldContato::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.inputFieldContato:focus {
+    border-bottom-color: #48bfe3;
+    background: rgba(72, 191, 227, 0.05);
+    padding: 0.8rem 0.5rem;
+    box-shadow: 0 2px 8px rgba(72, 191, 227, 0.1);
+}
+
+.inputFieldContato:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.inputUnderlineContato {
+    position: absolute;
+    bottom: 0;
+    left: 2.5rem;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #48bfe3, #9c27b0);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.inputFieldContato:focus + .inputUnderlineContato {
+    transform: scaleX(1);
+}
+
+/* Textarea */
+.textareaGroupContato {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+}
+
+.textareaFieldContato {
+    background: rgba(72, 191, 227, 0.05);
+    border: 1px solid rgba(72, 191, 227, 0.2);
+    border-radius: 10px;
+    padding: 1rem;
+    color: #fff;
+    font-size: 0.95rem;
+    font-family: inherit;
+    outline: none;
+    min-height: 140px;
     resize: vertical;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.textareaFieldContato::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.textareaFieldContato:focus {
+    border-color: #48bfe3;
+    background: rgba(72, 191, 227, 0.1);
+    box-shadow: 0 4px 12px rgba(72, 191, 227, 0.15);
+}
+
+.textareaFieldContato:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.textareaUnderlineContato {
+    display: none;
+}
+
+/* Botão */
+.buttonContainerContato {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.buttonContainerContato button {
+    animation: slideInUp 0.8s ease-out 0.2s both;
+    transition: all 0.3s ease;
+}
+
+.buttonContainerContato button:hover:not(:disabled) {
+    transform: translateY(-3px);
+}
+
+.buttonContainerContato button:disabled {
+    opacity: 0.7;
+}
+
+/* Animações */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatImage {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+/* Responsividade */
+@media only screen and (max-width: 768px) {
+    .containerContato {
+        flex-direction: column;
+        padding: 2rem 1rem;
+        min-height: auto;
+        gap: 2rem;
+    }
+
+    .imagemContato {
+        flex: none;
+        width: 100%;
+        min-height: 350px;
+    }
+
+    .imagemWrapperContato {
+        max-width: 300px;
+    }
+
+    .formularioContato {
+        flex: none;
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .contrateme {
+        font-size: 1.5rem;
+    }
+
+    .formSubtitleContato {
+        font-size: 0.85rem;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .containerContato {
+        padding: 1.5rem 1rem;
+    }
+
+    .imagemContato {
+        min-height: 280px;
+    }
+
+    .imagemWrapperContato {
+        max-width: 250px;
+    }
+
+    .formularioContato {
+        padding: 1.2rem;
+        border-radius: 15px;
+    }
+
+    .contrateme {
+        font-size: 1.3rem;
+    }
+
+    .inputGroupContato {
+        gap: 0.6rem;
+    }
+
+    .inputIconContato {
+        font-size: 1.1rem;
+    }
+
+    .textareaFieldContato {
+        min-height: 120px;
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .buttonContainerContato {
+        margin-top: 1.5rem;
+    }
 }
 

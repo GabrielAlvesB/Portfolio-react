@@ -1,30 +1,47 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ProjetoCard.css'
 import Button from '../../@lib/button/Button'
+import { FiGithub, FiExternalLink } from 'react-icons/fi'
 
 const ProjetoCard = ({ name, img, link, logo, logo2, freela, icones, isNew }) => {
+  const [isHovered, setIsHovered] = useState(false)
+
   return (
-    <div className="post-card mt-2">
+    <div 
+      className="post-card mt-2"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       {isNew && <div className="new-project-badge">Novo</div>}
-      <div className='d-flex justify-content-center gap-4'>
-        <img src={logo} alt="" className="avatar" />
-        {freela && <img src={logo2} alt="" className="avatar" />}
+      
+      <div className="project-image-wrapper">
+        <img src={img} alt={name} className="image-preview" />
+        <div className={`project-overlay ${isHovered ? 'active' : ''}`}>
+          <div className="overlay-content">
+            <a href={link} target="_blank" rel="noopener noreferrer" className="overlay-button">
+              <FiExternalLink size={24} />
+              Visualizar
+            </a>
+          </div>
+        </div>
       </div>
-      <div className='d-flex justify-content-center mt-2'>
-        <p href="#" class="titleProjetos">{name}</p>
+
+      <div className="project-header">
+        <div className='d-flex justify-content-center gap-3 align-items-center'>
+          <img src={logo} alt="Logo 1" className="avatar" />
+          {freela && <img src={logo2} alt="Logo 2" className="avatar" />}
+        </div>
+        <h3 className="titleProjetos">{name}</h3>
       </div>
-      <div className='mt-2'>
-        <img src={img} alt="#" className="image-preview" />
-      </div>
-      <div className='d-flex  justify-content-around mt-4'>
-        {icones.map((icone) => (
-          <img key={icone.id} src={icone.nome} alt="" className='iconesProjeto' />
-        ))}
-      </div>
-      <div className='d-flex justify-content-center mt-4 mb-2'>
-        <a href={link} target="_blank">
-          <Button size={"medium"} name={`Saiba +`} />
-        </a>
+
+      <div className="technologies-section">
+        <div className='d-flex justify-content-center gap-2 flex-wrap'>
+          {icones.map((icone) => (
+            <div key={icone.id} className="tech-badge">
+              <img src={icone.nome} alt="Tech" className='iconesProjeto' />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )

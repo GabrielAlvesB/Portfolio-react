@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import "./FotoPrincipal.css"
 
-import FotoPerfil from '/img/perfil/FotoPerfil.png'
-import FotoPerfilanime from '/img/perfil/desenho.png'
+import FotoPerfil from '../../../assets/img/perfil/FotoPerfil.png'
+import FotoPerfilanime from '../../../assets/img/perfil/desenho.png'
 import ImageHover from '../../ImageHover'
 
 const FotoPrincipal = () => {
@@ -25,11 +25,15 @@ const FotoPrincipal = () => {
               src={FotoPerfil} 
               alt="Foto de perfil principal"
               className={`base-image ${isHovered ? 'fade-out' : 'fade-in'}`}
+              loading="eager"
+              decoding="async"
             />
             <img 
               src={FotoPerfilanime}
               alt="Foto de perfil alternativa"
               className={`hover-image ${isHovered ? 'fade-in' : 'fade-out'}`}
+              loading="lazy"
+              decoding="async"
             />
         </div>
     </div>

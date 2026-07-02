@@ -1,7 +1,7 @@
 // Imagens dos Projetos
-import ResidencialPerim from "/img/projetos/ResidencialPerim/01.png"
-import Multistep from "/img/projetos/react_multistep_form/01-alt.png"
-import LojaZap from "/img/projetos/Loja_Zap_shadcn_ui/01.png"
+import ResidencialPerim from "../assets/img/projetos/ResidencialPerim/01.png"
+import Multistep from "../assets/img/projetos/react_multistep_form/01-alt.png"
+import LojaZap from "../assets/img/projetos/Loja_Zap_shadcn_ui/01.png"
 
 // Logos das Empresas
 import B7web from "/img/projetos/logos/b7web.png"
