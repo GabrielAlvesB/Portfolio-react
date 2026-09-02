@@ -10,16 +10,52 @@
 
 .sobre-wrapper {
     width: 100%;
-    max-width: 1100px;
+    max-width: 900px;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2.5rem;
+}
+
+/* Faixa de destaques (estilo currículo) */
+.sobre-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    animation: slideInDown 0.8s ease-out;
+}
+
+.sobre-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 1.2rem 0.8rem;
+    text-align: center;
+    background: rgba(72, 191, 227, 0.06);
+    border: 1px solid rgba(72, 191, 227, 0.2);
+    border-radius: 16px;
+}
+
+.sobre-stat strong {
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #48bfe3 0%, #0ea5e9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.sobre-stat span {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 /* Abas de Navegação */
 .sobre-tabs {
     display: flex;
-    gap: 1rem;
+    gap: 0.8rem;
     justify-content: center;
     flex-wrap: wrap;
     animation: slideInDown 0.8s ease-out;
@@ -28,68 +64,41 @@
 .tab-button {
     display: flex;
     align-items: center;
-    gap: 0.8rem;
-    padding: 0.8rem 1.8rem;
-    background: linear-gradient(135deg, rgba(72, 191, 227, 0.1) 0%, rgba(156, 39, 176, 0.1) 100%);
-    border: 2px solid rgba(72, 191, 227, 0.3);
-    border-radius: 15px;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1rem;
+    gap: 0.6rem;
+    padding: 0.7rem 1.5rem;
+    background: rgba(72, 191, 227, 0.06);
+    border: 1px solid rgba(72, 191, 227, 0.25);
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-}
-
-.tab-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, #48bfe3, #9c27b0);
-    z-index: -1;
-    transition: left 0.4s ease;
-    opacity: 0.1;
+    transition: all 0.3s ease;
 }
 
 .tab-button:hover {
-    border-color: rgba(72, 191, 227, 0.6);
+    border-color: rgba(72, 191, 227, 0.5);
     color: #48bfe3;
-    background: linear-gradient(135deg, rgba(72, 191, 227, 0.15) 0%, rgba(156, 39, 176, 0.15) 100%);
-    transform: translateY(-3px);
 }
 
 .tab-button.active {
     border-color: #48bfe3;
-    background: linear-gradient(135deg, rgba(72, 191, 227, 0.25) 0%, rgba(156, 39, 176, 0.25) 100%);
+    background: rgba(72, 191, 227, 0.15);
     color: #48bfe3;
-    box-shadow: 0 8px 30px rgba(72, 191, 227, 0.2);
-    transform: translateY(-3px);
-}
-
-.tab-button svg {
-    transition: all 0.4s ease;
-}
-
-.tab-button.active svg {
-    color: #9c27b0;
 }
 
 /* Container de Conteúdo */
 .sobre-content {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
     animation: slideInUp 0.8s ease-out 0.2s both;
 }
 
 .content-tabs-container {
     position: relative;
     width: 100%;
-    min-height: 500px;
+    min-height: 260px;
 }
 
 .content-tab {
@@ -97,137 +106,85 @@
     width: 100%;
     opacity: 0;
     visibility: hidden;
-    transform: translateX(50px) scale(0.95);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(12px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
 }
 
 .content-tab.active {
     opacity: 1;
     visibility: visible;
-    transform: translateX(0) scale(1);
+    transform: translateY(0);
     pointer-events: auto;
 }
 
 /* Conteúdo Interno */
 .content-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
     padding: 2.5rem;
-    background: linear-gradient(135deg, rgba(72, 191, 227, 0.08) 0%, rgba(156, 39, 176, 0.08) 100%);
-    border: 1px solid rgba(72, 191, 227, 0.2);
-    border-radius: 25px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    background: rgba(72, 191, 227, 0.05);
+    border: 1px solid rgba(72, 191, 227, 0.18);
+    border-left: 3px solid #48bfe3;
+    border-radius: 4px 20px 20px 4px;
 }
 
-/* Imagem */
-.content-image {
-    position: relative;
+.content-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.content-icon-badge {
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 300px;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(72, 191, 227, 0.12);
+    border: 1px solid rgba(72, 191, 227, 0.3);
+    color: #48bfe3;
 }
 
-.content-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0 10px 30px rgba(72, 191, 227, 0.2));
-    transition: all 0.4s ease;
-    animation: imageFloat 3s ease-in-out infinite;
-}
-
-.content-tab.active .content-image img {
-    filter: drop-shadow(0 15px 40px rgba(72, 191, 227, 0.3));
-}
-
-.image-glow {
-    position: absolute;
-    width: 120%;
-    height: 120%;
-    background: radial-gradient(circle, rgba(72, 191, 227, 0.15) 0%, transparent 70%);
-    border-radius: 50%;
-    animation: glow 3s ease-in-out infinite;
-    z-index: -1;
-}
-
-@keyframes imageFloat {
-    0%, 100% {
-        transform: translateY(0px) scale(1);
-    }
-    50% {
-        transform: translateY(-15px) scale(1.02);
-    }
-}
-
-@keyframes glow {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 0.5;
-    }
-    50% {
-        transform: scale(1.2);
-        opacity: 0.8;
-    }
-}
-
-/* Texto */
-.content-text {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    animation: slideInRight 0.8s ease-out;
-}
-
-.content-text h3 {
-    font-size: 2rem;
+.content-inner h3 {
+    font-size: 1.5rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #48bfe3 0%, #9c27b0 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #fff;
     margin: 0;
-    animation: titleFadeIn 0.8s ease-out 0.2s both;
 }
 
-.content-text p {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.85);
+.content-inner p {
+    font-size: 1.02rem;
+    line-height: 1.85;
+    color: rgba(255, 255, 255, 0.75);
     margin: 0;
-    animation: textFadeIn 0.8s ease-out 0.3s both;
 }
 
 /* Pontos de Progresso */
 .progress-dots {
     display: flex;
     justify-content: center;
-    gap: 0.8rem;
+    gap: 0.7rem;
 }
 
 .dot {
-    width: 12px;
-    height: 12px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background: rgba(72, 191, 227, 0.3);
     cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 2px solid transparent;
+    transition: all 0.3s ease;
 }
 
 .dot:hover {
     background: rgba(72, 191, 227, 0.6);
-    transform: scale(1.3);
 }
 
 .dot.active {
-    background: linear-gradient(135deg, #48bfe3, #9c27b0);
-    box-shadow: 0 4px 15px rgba(72, 191, 227, 0.4);
-    transform: scale(1.2);
+    background: #48bfe3;
+    width: 22px;
+    border-radius: 4px;
 }
 
 /* Animações Gerais */
@@ -264,63 +221,19 @@
     }
 }
 
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes titleFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes textFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 /* Responsividade */
 @media only screen and (max-width: 768px) {
     .sobre-wrapper {
         gap: 2rem;
     }
 
-    .sobre-tabs {
-        gap: 0.8rem;
+    .sobre-stat strong {
+        font-size: 1.25rem;
     }
 
     .tab-button {
-        padding: 0.7rem 1.2rem;
-        font-size: 0.9rem;
+        padding: 0.6rem 1.1rem;
+        font-size: 0.85rem;
     }
 
     .tab-button span {
@@ -328,21 +241,14 @@
     }
 
     .content-inner {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 1.5rem;
-        min-height: auto;
+        padding: 1.6rem;
     }
 
-    .content-image {
-        height: 250px;
+    .content-inner h3 {
+        font-size: 1.3rem;
     }
 
-    .content-text h3 {
-        font-size: 1.5rem;
-    }
-
-    .content-text p {
+    .content-inner p {
         font-size: 0.95rem;
     }
 }
@@ -352,50 +258,54 @@
         padding: 1rem;
     }
 
-    .sobre-wrapper {
-        gap: 1.5rem;
+    .sobre-stats {
+        gap: 0.6rem;
+    }
+
+    .sobre-stat {
+        padding: 0.9rem 0.4rem;
+    }
+
+    .sobre-stat strong {
+        font-size: 1.1rem;
+    }
+
+    .sobre-stat span {
+        font-size: 0.65rem;
     }
 
     .sobre-tabs {
         gap: 0.5rem;
-        justify-content: flex-center;
+        justify-content: flex-start;
         overflow-x: auto;
-        padding: 0.5rem;
+        padding: 0.5rem 0.2rem;
     }
 
     .tab-button {
         flex-shrink: 0;
-        padding: 0.6rem 1rem;
-        font-size: 0.85rem;
+        padding: 0.55rem 1rem;
         border-radius: 10px;
     }
 
     .content-inner {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
         padding: 1.2rem;
-        border-radius: 20px;
     }
 
-    .content-image {
-        height: 200px;
+    .content-header {
+        gap: 0.7rem;
     }
 
-    .content-text h3 {
-        font-size: 1.3rem;
+    .content-icon-badge {
+        width: 40px;
+        height: 40px;
     }
 
-    .content-text p {
+    .content-inner h3 {
+        font-size: 1.15rem;
+    }
+
+    .content-inner p {
         font-size: 0.9rem;
-        line-height: 1.6;
-    }
-
-    .progress-dots {
-        gap: 0.6rem;
-    }
-
-    .dot {
-        width: 10px;
-        height: 10px;
+        line-height: 1.7;
     }
 }

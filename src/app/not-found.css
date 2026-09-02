@@ -1,6 +1,6 @@
-.errorPage{
-    /* background-color: red; */
-    height: 100vh;
+.errorPage {
+    min-height: 100vh;
+    padding: 2rem 0;
 }
 .errorInfo {
     color: #fff;
@@ -8,8 +8,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
-.BotaoDeVoltarParaPrincipal{
+.BotaoDeVoltarParaPrincipal {
     margin-top: 15px;
 }

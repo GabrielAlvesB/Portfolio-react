@@ -3,24 +3,24 @@
   --primary-blue: #1a73e8;
   --primary-blue-light: #4285f4;
   --primary-blue-dark: #0d47a1;
-  
-  /* Cores de destaque */
-  --accent-purple: #9c27b0;
-  --accent-purple-light: #ba68c8;
-  --accent-purple-dark: #7b1fa2;
-  
+
+  /* Cores de destaque (azul claro) */
+  --accent-sky: #48bfe3;
+  --accent-sky-light: #7dd3fc;
+  --accent-sky-dark: #0ea5e9;
+
   /* Cores de fundo */
   --bg-dark: #101728;
   --bg-light: #f8f9fa;
-  
+
   /* Cores de texto */
   --text-light: #ffffff;
   --text-dark: #333333;
-  
+
   /* Cores de gradiente */
   --gradient-blue: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light));
-  --gradient-purple: linear-gradient(135deg, var(--accent-purple), var(--accent-purple-light));
-  --gradient-mixed: linear-gradient(135deg, var(--primary-blue), var(--accent-purple));
+  --gradient-sky: linear-gradient(135deg, var(--accent-sky), var(--accent-sky-dark));
+  --gradient-mixed: linear-gradient(135deg, var(--primary-blue), var(--accent-sky));
 
   /* Breakpoints */
   --mobile: 576px;
@@ -35,6 +35,7 @@
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-orbitron), "MuseoModerno", sans-serif;
 }
 
 html {
@@ -53,14 +54,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+  color: inherit;
+}
+
 /* Container responsivo */
 .container {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
-  transform: translateZ(0);
-  backface-visibility: hidden;
 }
 
 /* Melhorias de renderização para imagens */
@@ -69,8 +72,6 @@ img {
   height: auto;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
-  transform: translateZ(0);
-  backface-visibility: hidden;
 }
 
 /* Scrollbar personalizada */
@@ -88,7 +89,7 @@ img {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-purple);
+  background: var(--accent-sky);
 }
 
 /* Media Queries Globais */
@@ -96,7 +97,7 @@ img {
   html {
     font-size: 15px;
   }
-  
+
   .container {
     padding: 0 15px;
   }
@@ -106,7 +107,7 @@ img {
   html {
     font-size: 14px;
   }
-  
+
   .container {
     padding: 0 10px;
   }
@@ -125,10 +126,45 @@ img {
   .hide-mobile {
     display: none;
   }
-  
+
   .show-mobile {
     display: block;
   }
 }
 
-/* ... resto do seu CSS existente ... */
+/* Utilitários de flex usados nos componentes (substituem o Bootstrap) */
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-3 {
+  gap: 1rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}

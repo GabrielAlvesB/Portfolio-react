@@ -12,45 +12,269 @@
     width: 100%;
 }
 
-/* Grid de Projetos */
-.projeto-card {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2.5rem;
+/* Showcase: lista interativa + preview */
+.projeto-showcase {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
     width: 100%;
-    padding: 0;
-    transform: translateZ(0);
-    backface-visibility: hidden;
 }
 
-.col {
+.projeto-list {
+    flex: 1 1 420px;
+    display: flex;
+    flex-direction: column;
+}
+
+.projeto-entry {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.6rem 1rem;
+    border-top: 1px solid rgba(72, 191, 227, 0.15);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.projeto-list .projeto-entry:last-child {
+    border-bottom: 1px solid rgba(72, 191, 227, 0.15);
+}
+
+.projeto-entry::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #48bfe3, #0ea5e9);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.projeto-entry:hover,
+.projeto-entry.active {
+    background: rgba(72, 191, 227, 0.06);
+    padding-left: 1.4rem;
+}
+
+.projeto-entry:hover::before,
+.projeto-entry.active::before {
+    transform: scaleY(1);
+}
+
+.projeto-index {
+    flex-shrink: 0;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: rgba(72, 191, 227, 0.25);
+    transition: color 0.3s ease;
+    width: 3rem;
+}
+
+.projeto-entry.active .projeto-index {
+    color: #48bfe3;
+}
+
+.projeto-entry-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.projeto-entry-info h3 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    color: rgba(255, 255, 255, 0.75);
+    transition: color 0.3s ease;
+}
+
+.projeto-entry.active .projeto-entry-info h3,
+.projeto-entry:hover .projeto-entry-info h3 {
+    color: #48bfe3;
+}
+
+.entry-badge-novo,
+.entry-badge-freela {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.2rem 0.55rem;
+    border-radius: 20px;
+}
+
+.entry-badge-novo {
+    background: linear-gradient(135deg, #48bfe3, #0ea5e9);
+    color: #06121f;
+}
+
+.entry-badge-freela {
+    background: rgba(72, 191, 227, 0.15);
+    border: 1px solid rgba(72, 191, 227, 0.3);
+    color: #48bfe3;
+}
+
+.projeto-entry-info p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 0 0 0.8rem;
+    max-width: 480px;
+}
+
+.projeto-entry-tech {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.projeto-entry-tech img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    opacity: 0.85;
+}
+
+.projeto-entry-link {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(72, 191, 227, 0.3);
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.projeto-entry.active .projeto-entry-link,
+.projeto-entry:hover .projeto-entry-link {
+    border-color: #48bfe3;
+    color: #48bfe3;
+    background: rgba(72, 191, 227, 0.1);
+    transform: rotate(45deg);
+}
+
+/* Preview fixo ao lado da lista */
+.projeto-preview {
+    flex: 1 1 420px;
+    position: sticky;
+    top: 100px;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.projeto-preview-frame {
+    border-radius: 18px;
+    overflow: hidden;
+    background: #0b1220;
+    border: 1px solid rgba(72, 191, 227, 0.25);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.frame-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.7rem 1rem;
+    background: #0e1a2b;
+    border-bottom: 1px solid rgba(72, 191, 227, 0.15);
+}
+
+.frame-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.dot-red { background: #ff5f57; }
+.dot-yellow { background: #febc2e; }
+.dot-green { background: #28c840; }
+
+.frame-image-wrapper {
     width: 100%;
-    padding: 0;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    animation: cardSlideIn 0.6s ease-out forwards;
+    height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0b1220;
 }
 
-.col:nth-child(1) {
-    animation-delay: 0.1s;
+.frame-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: frameFadeIn 0.4s ease;
 }
 
-.col:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.col:nth-child(3) {
-    animation-delay: 0.3s;
-}
-
-@keyframes cardSlideIn {
+@keyframes frameFadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: scale(0.98);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: scale(1);
+    }
+}
+
+.preview-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    align-self: flex-start;
+    padding: 0.75rem 1.4rem;
+    border-radius: 30px;
+    border: 2px solid #48bfe3;
+    color: #48bfe3;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.preview-cta:hover {
+    background: linear-gradient(135deg, #48bfe3, #0ea5e9);
+    color: #06121f;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(72, 191, 227, 0.35);
+}
+
+@media (max-width: 900px) {
+    .projeto-showcase {
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+
+    .projeto-preview {
+        position: static;
+    }
+
+    .frame-image-wrapper {
+        height: 260px;
+    }
+
+    .projeto-entry {
+        padding: 1.3rem 0.5rem;
+        gap: 1rem;
+    }
+
+    .projeto-index {
+        font-size: 1.3rem;
+        width: 2.2rem;
+    }
+
+    .projeto-entry-info h3 {
+        font-size: 1.1rem;
     }
 }
 
@@ -61,7 +285,7 @@
     align-items: center;
     gap: 2rem;
     padding: 3rem 2rem;
-    background: linear-gradient(135deg, rgba(72, 191, 227, 0.1) 0%, rgba(156, 39, 176, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(72, 191, 227, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%);
     border: 1px solid rgba(72, 191, 227, 0.2);
     border-radius: 20px;
     backdrop-filter: blur(10px);
@@ -90,7 +314,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(72, 191, 227, 0.15) 0%, rgba(156, 39, 176, 0.15) 100%);
+    background: linear-gradient(135deg, rgba(72, 191, 227, 0.15) 0%, rgba(14, 165, 233, 0.15) 100%);
     border: 2px solid rgba(72, 191, 227, 0.3);
     border-radius: 20px;
     color: #48bfe3;
@@ -109,8 +333,8 @@
 
 .footer-content:hover .github-icon-large {
     border-color: rgba(72, 191, 227, 0.6);
-    background: linear-gradient(135deg, rgba(72, 191, 227, 0.25) 0%, rgba(156, 39, 176, 0.25) 100%);
-    color: #9c27b0;
+    background: linear-gradient(135deg, rgba(72, 191, 227, 0.25) 0%, rgba(14, 165, 233, 0.25) 100%);
+    color: #0ea5e9;
     box-shadow: 0 8px 30px rgba(72, 191, 227, 0.2);
     transform: translateY(-5px);
 }
@@ -126,7 +350,7 @@
     font-size: 1.8rem;
     font-weight: 700;
     margin: 0;
-    background: linear-gradient(135deg, #48bfe3 0%, #9c27b0 100%);
+    background: linear-gradient(135deg, #48bfe3 0%, #0ea5e9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -159,7 +383,7 @@
 
 .github-link:hover .arrow-icon {
     transform: translateX(5px);
-    color: #9c27b0;
+    color: #0ea5e9;
 }
 
 /* Animações */
@@ -182,12 +406,6 @@
 
     .projeto-content {
         gap: 2rem;
-    }
-
-    .projeto-card {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 0;
     }
 
     .projeto-footer {
@@ -224,11 +442,6 @@
 }
 
 @media (min-width: 577px) and (max-width: 768px) {
-    .projeto-card {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
-
     .projeto-container {
         padding: 1.5rem;
     }
@@ -250,11 +463,6 @@
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    .projeto-card {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2.5rem;
-    }
-
     .projeto-container {
         padding: 2rem;
     }
@@ -265,11 +473,6 @@
 }
 
 @media (min-width: 1025px) {
-    .projeto-card {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2.5rem;
-    }
-
     .projeto-container {
         padding: 3rem;
     }

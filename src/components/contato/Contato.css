@@ -1,186 +1,168 @@
-/* Layout Principal */
 .containerContato {
     width: 100%;
-    min-height: 500px;
-    padding: 3rem 2rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.contatoWrapper {
+    width: 100%;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
     gap: 3rem;
+    align-items: start;
+}
+
+/* Coluna de apresentação */
+.contatoPitch {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    padding-top: 0.5rem;
+}
+
+.contrateme {
+    font-size: 2.1rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #48bfe3 0%, #0ea5e9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+}
+
+.pitchTexto {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1rem;
+    line-height: 1.75;
+    margin: 0;
+}
+
+.pitchInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 0.3rem;
+}
+
+.pitchInfoItem {
     display: flex;
     align-items: center;
-    justify-content: center;
-    animation: slideInUp 0.8s ease-out;
+    gap: 0.7rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.92rem;
 }
 
-/* Imagem */
-.imagemContato {
-    flex: 1;
-    display: flex;
-    justify-content: center;
+.pitchInfoItem svg {
+    color: #48bfe3;
+    flex-shrink: 0;
+}
+
+.pitchWhatsappLink {
+    display: inline-flex;
     align-items: center;
-    min-height: 450px;
+    gap: 0.6rem;
+    width: fit-content;
+    margin-top: 0.6rem;
+    padding: 0.7rem 1.2rem;
+    border-radius: 30px;
+    border: 1px solid rgba(37, 211, 102, 0.5);
+    color: #25d366;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-.imagemWrapperContato {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-    aspect-ratio: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.imagemWrapperContato img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0 10px 40px rgba(72, 191, 227, 0.3));
-    animation: floatImage 4s ease-in-out infinite;
-    transition: filter 0.3s ease;
-}
-
-.imagemWrapperContato:hover img {
-    filter: drop-shadow(0 15px 50px rgba(72, 191, 227, 0.5));
-}
-
-.imagemGlowContato {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(72, 191, 227, 0.2) 0%, transparent 70%);
-    animation: glowPulse 3s ease-in-out infinite;
-    z-index: -1;
+.pitchWhatsappLink:hover {
+    background: rgba(37, 211, 102, 0.12);
+    transform: translateY(-2px);
 }
 
 /* Formulário */
 .formularioContato {
-    flex: 1;
     border-radius: 20px;
-    padding: 2.5rem;
-    background: linear-gradient(135deg, rgba(72, 191, 227, 0.1) 0%, rgba(156, 39, 176, 0.1) 100%);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    background: linear-gradient(135deg, rgba(72, 191, 227, 0.08) 0%, rgba(14, 165, 233, 0.08) 100%);
     backdrop-filter: blur(15px);
+    border: 1px solid rgba(72, 191, 227, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Chips de assunto ("moldes" de mensagem) */
+.assuntoChips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.assuntoChip {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
     border: 1px solid rgba(72, 191, 227, 0.3);
-    box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.2),
-        inset 0 1px 1px rgba(255, 255, 255, 0.1);
-    animation: slideInRight 0.8s ease-out;
-    transition: all 0.3s ease;
+    background: rgba(72, 191, 227, 0.06);
+    color: rgba(255, 255, 255, 0.75);
+    font-family: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
 }
 
-.formularioContato:hover {
+.assuntoChip:hover {
     border-color: rgba(72, 191, 227, 0.6);
-    box-shadow: 
-        0 12px 40px rgba(72, 191, 227, 0.2),
-        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    color: #48bfe3;
 }
 
-/* Header do Formulário */
-.formHeaderContato {
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.contrateme {
-    font-size: 2rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, #48bfe3 0%, #9c27b0 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin: 0 0 0.5rem 0;
-    animation: slideInDown 0.8s ease-out;
-}
-
-.formSubtitleContato {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.95rem;
-    margin: 0;
-    font-weight: 300;
+.assuntoChip.active {
+    background: linear-gradient(135deg, #48bfe3, #0ea5e9);
+    border-color: transparent;
+    color: #06121f;
 }
 
 /* Inputs */
-.formularioInputContato {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
 .inputFormulario {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.2rem;
 }
 
 .inputGroupContato {
     position: relative;
     display: flex;
     align-items: center;
-    gap: 0.8rem;
+    gap: 0.7rem;
 }
 
 .inputIconContato {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     color: #48bfe3;
     flex-shrink: 0;
-    transition: all 0.3s ease;
-}
-
-.inputGroupContato:focus-within .inputIconContato {
-    color: #9c27b0;
-    transform: scale(1.2);
 }
 
 .inputFieldContato {
     flex: 1;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.03);
     border: none;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-    padding: 0.8rem 0.5rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+    padding: 0.7rem 0.2rem;
     color: #fff;
     font-size: 0.95rem;
+    font-family: inherit;
     outline: none;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
+    transition: border-color 0.3s ease;
 }
 
 .inputFieldContato::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.45);
 }
 
 .inputFieldContato:focus {
     border-bottom-color: #48bfe3;
-    background: rgba(72, 191, 227, 0.05);
-    padding: 0.8rem 0.5rem;
-    box-shadow: 0 2px 8px rgba(72, 191, 227, 0.1);
-}
-
-.inputFieldContato:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
-
-.inputUnderlineContato {
-    position: absolute;
-    bottom: 0;
-    left: 2.5rem;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #48bfe3, #9c27b0);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.inputFieldContato:focus + .inputUnderlineContato {
-    transform: scaleX(1);
-}
-
-/* Textarea */
-.textareaGroupContato {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin-top: 0.5rem;
 }
 
 .textareaFieldContato {
@@ -192,178 +174,83 @@
     font-size: 0.95rem;
     font-family: inherit;
     outline: none;
-    min-height: 140px;
+    min-height: 120px;
     resize: vertical;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s ease;
 }
 
 .textareaFieldContato::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.45);
 }
 
 .textareaFieldContato:focus {
     border-color: #48bfe3;
     background: rgba(72, 191, 227, 0.1);
-    box-shadow: 0 4px 12px rgba(72, 191, 227, 0.15);
 }
 
-.textareaFieldContato:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
+.erroContato {
+    color: #ff8a8a;
+    font-size: 0.88rem;
+    text-align: center;
+    margin: 0;
 }
 
-.textareaUnderlineContato {
-    display: none;
-}
-
-/* Botão */
-.buttonContainerContato {
+/* Botão de envio */
+.whatsappSubmitContato {
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-top: 2rem;
-    gap: 1rem;
-}
-
-.buttonContainerContato button {
-    animation: slideInUp 0.8s ease-out 0.2s both;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.9rem 1.8rem;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
     transition: all 0.3s ease;
 }
 
-.buttonContainerContato button:hover:not(:disabled) {
+.whatsappSubmitContato:hover {
     transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(37, 211, 102, 0.45);
 }
 
-.buttonContainerContato button:disabled {
-    opacity: 0.7;
-}
-
-/* Animações */
-@keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes floatImage {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-}
-
-@keyframes glowPulse {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 0.5;
-    }
-    50% {
-        transform: scale(1.1);
-        opacity: 0.8;
-    }
+.whatsappSubmitContato:active {
+    transform: translateY(-1px);
 }
 
 /* Responsividade */
-@media only screen and (max-width: 768px) {
-    .containerContato {
-        flex-direction: column;
-        padding: 2rem 1rem;
-        min-height: auto;
+@media (max-width: 860px) {
+    .contatoWrapper {
+        grid-template-columns: 1fr;
         gap: 2rem;
     }
 
-    .imagemContato {
-        flex: none;
-        width: 100%;
-        min-height: 350px;
+    .contatoPitch {
+        text-align: center;
+        align-items: center;
     }
 
-    .imagemWrapperContato {
-        max-width: 300px;
-    }
-
-    .formularioContato {
-        flex: none;
-        width: 100%;
-        padding: 1.5rem;
-    }
-
-    .contrateme {
-        font-size: 1.5rem;
-    }
-
-    .formSubtitleContato {
-        font-size: 0.85rem;
+    .pitchInfo {
+        align-items: center;
     }
 }
 
-@media only screen and (max-width: 576px) {
+@media (max-width: 576px) {
     .containerContato {
         padding: 1.5rem 1rem;
     }
 
-    .imagemContato {
-        min-height: 280px;
-    }
-
-    .imagemWrapperContato {
-        max-width: 250px;
+    .contrateme {
+        font-size: 1.6rem;
     }
 
     .formularioContato {
-        padding: 1.2rem;
-        border-radius: 15px;
-    }
-
-    .contrateme {
-        font-size: 1.3rem;
-    }
-
-    .inputGroupContato {
-        gap: 0.6rem;
-    }
-
-    .inputIconContato {
-        font-size: 1.1rem;
-    }
-
-    .textareaFieldContato {
-        min-height: 120px;
-        padding: 0.8rem;
-        font-size: 0.9rem;
-    }
-
-    .buttonContainerContato {
-        margin-top: 1.5rem;
+        padding: 1.4rem;
+        border-radius: 16px;
     }
 }
-

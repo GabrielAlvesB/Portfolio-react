@@ -125,7 +125,7 @@
     opacity: 0;
 }
 
-.buttonGeneric:hover::before:not(:disabled) {
+.buttonGeneric:hover:not(:disabled)::before {
     filter: blur(20px);
     opacity: 1;
 }

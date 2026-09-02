@@ -1,44 +1,48 @@
+"use client";
+
 import "./NavBar.css";
-import { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import Logo from '/img/iconePrincipal/logoazul.png'
-import { FiMenu, FiX } from 'react-icons/fi';
+import { useState } from "react";
+import { useRouter, usePathname } from "next/navigation";
+import { FiMenu, FiX } from "react-icons/fi";
+
+const Logo = "/img/iconePrincipal/logoazul.png";
 
 const NavBar = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: 'Início', id: 'home' },
-    { label: 'Sobre', id: 'sobre' },
-    { label: 'Habilidades', id: 'habilidades' },
-    { label: 'Projetos', id: 'projetos' },
+    { label: "Início", id: "home" },
+    { label: "Sobre", id: "sobre" },
+    { label: "Experiência", id: "experiencia" },
+    { label: "Habilidades", id: "habilidades" },
+    { label: "Projetos", id: "projetos" },
+    { label: "Contato", id: "contato" },
   ];
 
   const handleNavigation = (sectionId) => {
     setIsOpen(false);
-    if (location.pathname !== '/') {
-      navigate('/', { state: { scrollTo: sectionId } });
-    } else {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      }
+
+    if (pathname !== "/") {
+      router.push(`/#${sectionId}`);
+      return;
+    }
+
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* Logo e Nome */}
-        <div 
+        <div
           className="navbar-brand"
           onClick={(e) => {
             e.preventDefault();
-            handleNavigation('home');
+            handleNavigation("home");
           }}
           role="button"
           tabIndex={0}
@@ -46,48 +50,30 @@ const NavBar = () => {
           <div className="navbar-logo">
             <img src={Logo} alt="Logo Gabriel Alves" />
           </div>
-          <div className="navbar-name">
-            <span>Gabriel Alves</span>
-            <div className="name-underline"></div>
-          </div>
+          <span className="navbar-name">Gabriel Alves</span>
         </div>
 
-        {/* Menu Toggle Mobile */}
-        <button 
-          className={`menu-toggle ${isOpen ? 'active' : ''}`}
+        <button
+          className={`menu-toggle ${isOpen ? "active" : ""}`}
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
-          {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+          {isOpen ? <FiX size={22} /> : <FiMenu size={22} />}
         </button>
 
-        {/* Menu Links */}
-        <div className={`navbar-menu ${isOpen ? 'active' : ''}`}>
-          <div className="navbar-links">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                className="nav-link"
-                onClick={() => handleNavigation(item.id)}
-              >
-                <span className="nav-link-text">{item.label}</span>
-                <span className="nav-link-underline"></span>
-              </button>
-            ))}
-          </div>
-
-          {/* CTA Button */}
-          <button 
-            className="contact-cta"
-            onClick={() => handleNavigation('contato')}
-          >
-            <span>Contato</span>
-            <span className="cta-icon">→</span>
-          </button>
+        <div className={`navbar-menu ${isOpen ? "active" : ""}`}>
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              className="nav-link"
+              onClick={() => handleNavigation(item.id)}
+            >
+              {item.label}
+            </button>
+          ))}
         </div>
       </div>
 
-      {/* Mobile Overlay */}
       {isOpen && <div className="navbar-overlay" onClick={() => setIsOpen(false)}></div>}
     </nav>
   );

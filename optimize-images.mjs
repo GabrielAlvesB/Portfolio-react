@@ -7,8 +7,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const imageDirs = [
-  path.join(__dirname, 'src/assets/img/perfil'),
-  path.join(__dirname, 'src/assets/img/projetos')
+  path.join(__dirname, 'public/img/perfil'),
+  path.join(__dirname, 'public/img/projetos')
 ];
 
 async function optimizeImages() {

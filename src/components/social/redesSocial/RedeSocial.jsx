@@ -1,15 +1,16 @@
-import React from 'react'
+import "./RedeSocial1.css";
 
-import "./RedeSocial1.css"
-
-
-const RedeSocial = ({indentifier, children}) => {
+const RedeSocial = ({ indentifier, href, children }) => {
   return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="social-btn flex-center rede-social-color"
+    >
+      {children} <span>{indentifier}</span>
+    </a>
+  );
+};
 
-    <div className="social-btn flex-center rede-social-color">
-		{children} <span>{indentifier}</span>
-	</div>
-  )
-}
-
-export default RedeSocial
+export default RedeSocial;

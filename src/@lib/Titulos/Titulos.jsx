@@ -1,14 +1,14 @@
-import React from 'react'
-import "./Titulos.css"
+import "./Titulos.css";
 
-const Titulos = (props) => {
+const Titulos = ({ text }) => {
   return (
-    <div className='d-flex justify-content-center '>
-        <button data-text="Awesome" className="button">
-            {props.children}
-        </button>
+    <div className="titulo-container">
+      <button data-text={text} className="button" type="button" tabIndex={-1}>
+        <span className="actual-text">&nbsp;{text}&nbsp;</span>
+        <span className="hover-text" aria-hidden="true">&nbsp;{text}&nbsp;</span>
+      </button>
     </div>
-   
-  )
-}
-export default Titulos
+  );
+};
+
+export default Titulos;

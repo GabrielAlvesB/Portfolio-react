@@ -1,176 +1,141 @@
-import { useState } from 'react'
-import "./Contato.css"
-import emailjs from '@emailjs/browser'
-import Button from '../../@lib/button/Button'
-import AvatarProgramador from '/img/avatar/Programador.png'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { FiUser, FiMail, FiMessageSquare, FiSend } from 'react-icons/fi';
+"use client";
+
+import { useState } from "react";
+import "./Contato.css";
+import { FiMessageSquare, FiSend, FiClock, FiMapPin } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
+import { buildWhatsAppLink, buildContactMessage } from "../../config/whatsapp";
+
+const ASSUNTOS = [
+  { label: "Orçamento", mensagem: "Gostaria de solicitar um orçamento para um projeto." },
+  { label: "Proposta de projeto", mensagem: "Tenho uma proposta de projeto para conversar com você." },
+  { label: "Dúvida", mensagem: "Tenho uma dúvida rápida." },
+  { label: "Trabalhar juntos", mensagem: "Vi seu portfólio e adoraria trabalhar com você." },
+];
 
 const Contato = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        assunto: '',
-        mensagem: ''
-    });
-    const [isLoading, setIsLoading] = useState(false);
+  const [formData, setFormData] = useState({ name: "", assunto: "", mensagem: "" });
+  const [erro, setErro] = useState("");
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({
-            ...prev,
-            [name]: value
-        }));
-    };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (erro) setErro("");
+  };
 
-    function validateForm({ name, email, assunto, mensagem }) {
-        if (!name || !email || !assunto || !mensagem) {
-            return { validate: false, error: "campoVazio" };
-        }
+  const handleChip = (chip) => {
+    setFormData((prev) => ({
+      ...prev,
+      assunto: chip.label,
+      mensagem: prev.mensagem || chip.mensagem,
+    }));
+    if (erro) setErro("");
+  };
 
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            return { validate: false, error: "emailInvalido" };
-        }
+  function handleSubmit(e) {
+    e.preventDefault();
 
-        return { validate: true, error: null };
+    const { name, assunto, mensagem } = formData;
+    if (!name || !mensagem) {
+      setErro("Preencha ao menos seu nome e a mensagem.");
+      return;
     }
 
-    function sendEmail(e) {
-        e.preventDefault();
-        setIsLoading(true);
+    const texto = buildContactMessage({ name, assunto, mensagem });
+    window.open(buildWhatsAppLink(texto), "_blank", "noopener,noreferrer");
+  }
 
-        const validateFields = validateForm(formData);
-        if (!validateFields.validate) {
-            toast.warning(validateFields.error === "campoVazio" 
-                ? "Por favor, preencha todos os campos!" 
-                : "Por favor, insira um e-mail válido!");
-            setIsLoading(false);
-            return;
-        }
+  return (
+    <div className="containerContato">
+      <div className="contatoWrapper">
+        <div className="contatoPitch">
+          <h2 className="contrateme">Vamos conversar</h2>
+          <p className="pitchTexto">
+            Me conta sobre a sua ideia, projeto ou vaga. Escolha um assunto, escreva a
+            mensagem e ela chega direto no meu WhatsApp — sem formulário perdido em
+            caixa de e-mail.
+          </p>
 
-        const templateParams = {
-            titulo: formData.assunto,
-            to_name: formData.name,
-            message: formData.mensagem,
-            email: formData.email
-        };
-
-        emailjs.send("service_tlijiih", "template_23e7hp5", templateParams, "8HjXOJpGm4YY4H1En")
-            .then(() => {
-                toast.success("Mensagem enviada com sucesso!");
-                setFormData({
-                    name: '',
-                    email: '',
-                    assunto: '',
-                    mensagem: ''
-                });
-            })
-            .catch(() => {
-                toast.error("Erro ao enviar mensagem. Tente novamente!");
-            })
-            .finally(() => {
-                setIsLoading(false);
-            });
-    }
-
-    return (
-        <div className='containerContato'>
-            <div className="imagemContato">
-                <div className="imagemWrapperContato">
-                    <img src={AvatarProgramador} alt="Avatar Programador" />
-                    <div className="imagemGlowContato"></div>
-                </div>
+          <div className="pitchInfo">
+            <div className="pitchInfoItem">
+              <FiClock />
+              <span>Costumo responder no mesmo dia</span>
             </div>
-
-            <div className="formularioContato">
-                <div className="formHeaderContato">
-                    <h2 className="contrateme">Entre em Contato</h2>
-                    <p className="formSubtitleContato">Deixe uma mensagem e entrarei em contato em breve</p>
-                </div>
-
-                <div className="formularioInputContato">
-                    <form className='inputFormulario' onSubmit={sendEmail}>
-                        <div className="inputGroupContato">
-                            <FiUser className="inputIconContato" />
-                            <input
-                                type="text"
-                                name="name"
-                                value={formData.name}
-                                onChange={handleChange}
-                                placeholder="Seu Nome"
-                                disabled={isLoading}
-                                className="inputFieldContato"
-                            />
-                            <div className="inputUnderlineContato"></div>
-                        </div>
-
-                        <div className="inputGroupContato">
-                            <FiMail className="inputIconContato" />
-                            <input
-                                type="email"
-                                name="email"
-                                value={formData.email}
-                                onChange={handleChange}
-                                placeholder="Seu E-mail"
-                                disabled={isLoading}
-                                className="inputFieldContato"
-                            />
-                            <div className="inputUnderlineContato"></div>
-                        </div>
-
-                        <div className="inputGroupContato">
-                            <FiMessageSquare className="inputIconContato" />
-                            <input
-                                type="text"
-                                name="assunto"
-                                value={formData.assunto}
-                                onChange={handleChange}
-                                placeholder="Assunto"
-                                disabled={isLoading}
-                                className="inputFieldContato"
-                            />
-                            <div className="inputUnderlineContato"></div>
-                        </div>
-
-                        <div className="textareaGroupContato">
-                            <textarea
-                                name="mensagem"
-                                value={formData.mensagem}
-                                onChange={handleChange}
-                                placeholder="Digite sua mensagem"
-                                disabled={isLoading}
-                                className="textareaFieldContato"
-                            />
-                            <div className="textareaUnderlineContato"></div>
-                        </div>
-
-                        <div className='buttonContainerContato'>
-                            <Button 
-                                size="medium" 
-                                type='submit' 
-                                name={isLoading ? "Enviando..." : "Enviar"}
-                                disabled={isLoading}
-                            />
-                        </div>
-                    </form>
-                </div>
+            <div className="pitchInfoItem">
+              <FiMapPin />
+              <span>Disponível para projetos remotos</span>
             </div>
-            <ToastContainer
-                position="top-right"
-                autoClose={3000}
-                hideProgressBar={false}
-                newestOnTop
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="dark"
-            />
+          </div>
+
+          <a
+            href={buildWhatsAppLink("Olá, Gabriel! Vim pelo seu portfólio.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="pitchWhatsappLink"
+          >
+            <FaWhatsapp size={18} />
+            Prefiro chamar direto no WhatsApp
+          </a>
         </div>
-    )
-}
 
-export default Contato
+        <div className="formularioContato">
+          <div className="assuntoChips">
+            {ASSUNTOS.map((chip) => (
+              <button
+                key={chip.label}
+                type="button"
+                className={`assuntoChip ${formData.assunto === chip.label ? "active" : ""}`}
+                onClick={() => handleChip(chip)}
+              >
+                {chip.label}
+              </button>
+            ))}
+          </div>
+
+          <form className="inputFormulario" onSubmit={handleSubmit}>
+            <div className="inputGroupContato">
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Seu nome"
+                className="inputFieldContato"
+              />
+            </div>
+
+            <div className="inputGroupContato">
+              <FiMessageSquare className="inputIconContato" />
+              <input
+                type="text"
+                name="assunto"
+                value={formData.assunto}
+                onChange={handleChange}
+                placeholder="Assunto"
+                className="inputFieldContato withIcon"
+              />
+            </div>
+
+            <textarea
+              name="mensagem"
+              value={formData.mensagem}
+              onChange={handleChange}
+              placeholder="Digite sua mensagem"
+              className="textareaFieldContato"
+            />
+
+            {erro && <p className="erroContato">{erro}</p>}
+
+            <button type="submit" className="whatsappSubmitContato">
+              <FaWhatsapp size={20} />
+              <span>Enviar no WhatsApp</span>
+              <FiSend size={16} />
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Contato;

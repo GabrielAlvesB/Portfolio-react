@@ -22,7 +22,7 @@
   
   .glitch:before {
     animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
-    color: #8b00ff;
+    color: #0ea5e9;
     z-index: -1;
   }
   

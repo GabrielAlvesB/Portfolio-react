@@ -1,8 +1,31 @@
-# React + Vite
+# Portfólio — Gabriel Alves
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfólio pessoal construído com [Next.js](https://nextjs.org) (App Router).
 
-Currently, two official plugins are available:
+## Rodando localmente
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm install
+npm run dev
+```
+
+Abra [http://localhost:3000](http://localhost:3000).
+
+## Scripts
+
+- `npm run dev` — ambiente de desenvolvimento
+- `npm run build` — build de produção
+- `npm start` — serve o build de produção
+- `npm run lint` — ESLint
+- `npm run optimize-images` — otimiza as imagens em `public/img/perfil` e `public/img/projetos`
+
+## Contato via WhatsApp
+
+O número usado no botão flutuante, no formulário de contato e nos links de WhatsApp
+fica em [`src/config/whatsapp.js`](src/config/whatsapp.js), com fallback para a
+variável de ambiente `NEXT_PUBLIC_WHATSAPP_NUMBER` (veja `.env.example`).
+
+## Deploy
+
+Pronto para deploy na [Vercel](https://vercel.com) — basta importar o repositório,
+sem configuração adicional.

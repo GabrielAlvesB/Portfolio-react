@@ -1,48 +1,34 @@
 .name {
-  color: var(--primary-blue);
-  font-size: 40px;
+  color: #48bfe3;
+  font-size: 1.6rem;
   font-weight: 600;
-  padding: 10px 0;
-  text-shadow:
-    2px 2px 0 var(--accent-purple-light),
-    4px 4px 8px rgba(80, 0, 120, 0.18),
-    0 1px 0 #fff;
+  padding: 0;
 }
 
 .typewriter-wrapper {
   display: inline-block;
   position: relative;
-  min-height: 50px;
+  min-height: 2.2rem;
 }
 
 /* Cursor do Typewriter */
 .typewriter-wrapper .Typewriter__cursor {
-  color: var(--primary-blue);
+  color: #48bfe3;
   animation: cursor-blink 1s infinite;
   font-weight: 700;
 }
 
 @keyframes cursor-blink {
-  0%, 100% { 
+  0%, 100% {
     opacity: 1;
   }
-  50% { 
+  50% {
     opacity: 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .name {
-    font-size: 32px;
-    transform: translateZ(0);
-    backface-visibility: hidden;
   }
 }
 
 @media (max-width: 576px) {
   .name {
-    font-size: 24px;
-    transform: translateZ(0);
-    backface-visibility: hidden;
+    font-size: 1.25rem;
   }
 }

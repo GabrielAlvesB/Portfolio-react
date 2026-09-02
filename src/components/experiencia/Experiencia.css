@@ -1,0 +1,135 @@
+.experiencia-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem 2rem 2rem;
+}
+
+.experiencia-intro {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.05rem;
+    max-width: 560px;
+    margin: 0 auto 3rem;
+    line-height: 1.7;
+}
+
+.experiencia-timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+}
+
+.experiencia-timeline::before {
+    content: '';
+    position: absolute;
+    left: 23px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(180deg, #48bfe3, #0ea5e9);
+    opacity: 0.35;
+}
+
+.experiencia-item {
+    position: relative;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.experiencia-marker {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(72, 191, 227, 0.2), rgba(14, 165, 233, 0.2));
+    border: 2px solid rgba(72, 191, 227, 0.5);
+    color: #48bfe3;
+    position: relative;
+    z-index: 1;
+}
+
+.experiencia-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1.5rem 1.8rem;
+    background: linear-gradient(135deg, rgba(72, 191, 227, 0.07) 0%, rgba(14, 165, 233, 0.07) 100%);
+    border: 1px solid rgba(72, 191, 227, 0.2);
+    border-radius: 18px;
+    transition: all 0.3s ease;
+}
+
+.experiencia-card:hover {
+    border-color: rgba(72, 191, 227, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(72, 191, 227, 0.15);
+}
+
+.experiencia-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.experiencia-card-header h3 {
+    font-size: 1.15rem;
+    color: #fff;
+    margin: 0;
+}
+
+.experiencia-atual {
+    flex-shrink: 0;
+    padding: 0.25rem 0.7rem;
+    border-radius: 20px;
+    background: rgba(72, 191, 227, 0.15);
+    border: 1px solid rgba(72, 191, 227, 0.4);
+    color: #48bfe3;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.experiencia-periodo {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+}
+
+.experiencia-duracao {
+    color: #48bfe3;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+@media (max-width: 576px) {
+    .experiencia-container {
+        padding: 1rem 1rem 1.5rem;
+    }
+
+    .experiencia-timeline::before {
+        left: 19px;
+    }
+
+    .experiencia-marker {
+        width: 40px;
+        height: 40px;
+    }
+
+    .experiencia-card {
+        padding: 1.2rem 1.4rem;
+    }
+
+    .experiencia-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
